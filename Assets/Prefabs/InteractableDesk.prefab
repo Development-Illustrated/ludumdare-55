@@ -176,6 +176,8 @@ MonoBehaviour:
   minRespawnTime: 5
   maxRespawnTime: 30
   orbRenderer: {fileID: 3301016583869779417}
+  ingredients: []
+  ingredient: {fileID: 0}
 --- !u!1 &7189141021001042246
 GameObject:
   m_ObjectHideFlags: 0
@@ -239,7 +241,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: 31321ba15b8f8eb4c954353edc038b1d, type: 2}
+  - {fileID: 2100000, guid: aaef3b5fa6f1e40719df2b8c084deea6, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0

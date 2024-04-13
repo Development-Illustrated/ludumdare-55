@@ -57,7 +57,9 @@ public class PedistalOrb : MonoBehaviour
     {
         if (other.tag == "Player" && !isRespawning)
         {
+            PlayerController pc = other.GetComponent<PlayerController>();
             PickUpOrb();
+
         }
     }
 }

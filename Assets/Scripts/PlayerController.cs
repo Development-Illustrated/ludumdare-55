@@ -41,6 +41,11 @@ public class PlayerController : MonoBehaviour
         }
     }
 
+    public void PickUpOrb(Ingredient ingredient)
+    {
+        Debug.Log("Picked up ingredient: " + ingredient);
+    }
+
     public void requestMove(Vector2 input)
     {
         moveInput = new Vector3(input.x, 0f, input.y);
