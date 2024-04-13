@@ -4,7 +4,8 @@ using UnityEngine;
 
 public class DestroyOverTime : MonoBehaviour
 {
-    public float lifetime;
+    [SerializeField]
+    protected float lifetime;
     // Start is called before the first frame update
     void Start()
     {
