@@ -5,7 +5,7 @@ using UnityEngine;
 
 public class Ingredient : MonoBehaviour
 {
-    protected enum Color {
+    public enum OrbColor {
         Orange,
         Blue,
         Red,
@@ -15,5 +15,5 @@ public class Ingredient : MonoBehaviour
     }
 
     [SerializeField]
-    protected Color color;
+    protected OrbColor color;
 }
