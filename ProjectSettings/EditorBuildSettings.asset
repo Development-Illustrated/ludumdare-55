@@ -6,13 +6,13 @@ EditorBuildSettings:
   serializedVersion: 2
   m_Scenes:
   - enabled: 1
-    path: Assets/Prefabs/Test/Torsos/Scenes/MainTitle.unity
+    path: Assets/Scenes/MainTitle.unity
     guid: 5ab7b7c3380434e3283334addc0855a5
   - enabled: 1
-    path: Assets/Prefabs/Test/Torsos/Scenes/GameScene.unity
+    path: Assets/Scenes/GameScene.unity
     guid: b98caa21d4d314019acd76b596b52fa1
   - enabled: 0
-    path: Assets/Prefabs/Test/Torsos/Scenes/SampleScene.unity
+    path: Assets/Scenes/SampleScene.unity
     guid: 99c9720ab356a0642a771bea13969a05
   m_configObjects:
     com.unity.input.settings: {fileID: 11400000, guid: a335e7e67c8e44c338d151be62e03f6c,

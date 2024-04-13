@@ -162,7 +162,15 @@ PrefabInstance:
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
-    m_AddedComponents: []
+    m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: 4bcca5d5de81bff41b4f82c7f7f66742,
+        type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 2600527172944296862}
+    - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: 4bcca5d5de81bff41b4f82c7f7f66742,
+        type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 4268097811781568462}
   m_SourcePrefab: {fileID: 100100000, guid: 4bcca5d5de81bff41b4f82c7f7f66742, type: 3}
 --- !u!4 &5182572216467416284 stripped
 Transform:
@@ -170,3 +178,44 @@ Transform:
     type: 3}
   m_PrefabInstance: {fileID: 4640546573277987639}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &5523631220697153126 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 919132149155446097, guid: 4bcca5d5de81bff41b4f82c7f7f66742,
+    type: 3}
+  m_PrefabInstance: {fileID: 4640546573277987639}
+  m_PrefabAsset: {fileID: 0}
+--- !u!95 &2600527172944296862
+Animator:
+  serializedVersion: 5
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5523631220697153126}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 5b42e77e24c544e07be0f5d10bc0a48b, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorStateOnDisable: 0
+  m_WriteDefaultValuesOnDisable: 0
+--- !u!114 &4268097811781568462
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5523631220697153126}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e291b5cf5c73e437d811e69652db20cc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  animator: {fileID: 2600527172944296862}
+  animationClip: {fileID: 7400000, guid: bfb7d5badd626f84489f3d27c9a6be5d, type: 2}
