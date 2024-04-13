@@ -15,10 +15,12 @@ public class BodyAssembly : MonoBehaviour
     private GameObject headPrefab;
     private GameObject torsoPrefab;
     private GameObject legPrefab;
-    void Start()
+
+    public void CreateBody(Transform parent, int randomSeed)
     {
+        Random.InitState(randomSeed);
         RandomlyChooseGameObject();
-        ConnectBodyParts();
+        ConnectBodyParts(parent);
     }
 
     void RandomlyChooseGameObject()
@@ -28,11 +30,11 @@ public class BodyAssembly : MonoBehaviour
         legPrefab = legPrefabs[UnityEngine.Random.Range(0, legPrefabs.Length)];
     }
 
-    void ConnectBodyParts()
+    void ConnectBodyParts(Transform parent)
     {
-        GameObject head = Instantiate(headPrefab, Vector3.zero, Quaternion.identity, this.transform);
-        GameObject torso = Instantiate(torsoPrefab, Vector3.zero, Quaternion.identity, this.transform);
-        GameObject legs = Instantiate(legPrefab, Vector3.zero, Quaternion.identity, this.transform);
+        GameObject head = Instantiate(headPrefab, transform.position, Quaternion.identity, parent);
+        GameObject torso = Instantiate(torsoPrefab, transform.position, Quaternion.identity, parent);
+        GameObject legs = Instantiate(legPrefab, transform.position, Quaternion.identity, parent);
 
         Transform headAnchorInTorso = torso.transform.Find("HeadAnchor");
         Transform legsAnchorInTorso = torso.transform.Find("LegsAnchor");
