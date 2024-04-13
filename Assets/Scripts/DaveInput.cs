@@ -16,12 +16,12 @@ public class DaveInput : MonoBehaviour
     public void OnMove(InputValue value)
     {
         if(debugMode){Debug.Log("OnMove called with " + value.Get<Vector2>());}
-        this.gameObject.SendMessage("requestMove", value.Get<Vector2>());
+        this.gameObject.SendMessage("RequestMove", value.Get<Vector2>());
     }
 
     public void OnInteract(InputValue value)
     {
         if(debugMode){Debug.Log("OnInteract called");}
-        this.gameObject.SendMessage("requestInteract");
+        this.gameObject.SendMessage("RequestInteract");
     }
 }

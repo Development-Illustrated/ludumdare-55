@@ -1,21 +1,15 @@
 using System.Collections;
 using System.Collections.Generic;
+using Unity.VisualScripting;
 using UnityEngine;
 
 public class PedistalOrb : MonoBehaviour
 {
-    [SerializeField]
-    protected float minRespawnTime;
-    [SerializeField]
-    protected float maxRespawnTime;
-    [SerializeField]
-    protected Renderer orbRenderer;
-    [SerializeField]
-    protected Ingredient[] ingredients;
-    [SerializeField]
-    protected Ingredient ingredient;
+    [SerializeField] protected float minRespawnTime;
+    [SerializeField] protected float maxRespawnTime;
+    [SerializeField] public Ingredient ingredient;
 
-    private bool isRespawning;
+    public bool isRespawning;
     private float respawnCounter;
 
     // Start is called before the first frame update
@@ -36,7 +30,7 @@ public class PedistalOrb : MonoBehaviour
         {
             if (isRespawning)
             {
-                orbRenderer.enabled = true;
+                ingredient.gameObject.SetActive(true);
                 isRespawning = false;
 
                 // ingredient = ingredients[Random.Range(0, ingredients.length)];
@@ -48,18 +42,8 @@ public class PedistalOrb : MonoBehaviour
     public void PickUpOrb()
     {
         Debug.Log("Picked up ingredient: " + ingredient);
-        orbRenderer.enabled = false;
+        ingredient.gameObject.SetActive(false);
         respawnCounter = Random.Range(minRespawnTime, maxRespawnTime);
         isRespawning = true;
-    }
-
-    private void OnTriggerEnter(Collider other)
-    {
-        if (other.tag == "Player" && !isRespawning)
-        {
-            PlayerController pc = other.GetComponent<PlayerController>();
-            PickUpOrb();
-
-        }
     }
 }
