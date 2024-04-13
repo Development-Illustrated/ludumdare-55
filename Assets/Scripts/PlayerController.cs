@@ -11,12 +11,14 @@ public class PlayerController : MonoBehaviour
     [SerializeField] float rotationSpeed = 10.0f;
 
     CharacterController characterController;
+    Animator animator;
     Camera cam;
     Vector3 moveInput;
     Vector3 targetDirection;
     
     void Start()
-    {
+    {   
+        animator = GetComponentInChildren<Animator>();
         characterController = GetComponent<CharacterController>();
         characterController.enableOverlapRecovery = true;
         cam = Camera.main;     
@@ -24,13 +26,18 @@ public class PlayerController : MonoBehaviour
 
     private void Update()
     {
-
         targetDirection = getTargetDirection(moveInput.x, moveInput.z);
         targetDirection.Normalize();
         simpleMove(targetDirection);
+
         if (moveInput != Vector3.zero)
-        {
+        {          
             rotate(targetDirection);
+            animator.SetBool("moving", true);
+        }
+        else
+        {
+            animator.SetBool("moving", false);
         }
     }
 
