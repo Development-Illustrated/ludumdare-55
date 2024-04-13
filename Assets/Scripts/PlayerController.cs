@@ -7,11 +7,13 @@ using UnityEngine;
 public class PlayerController : MonoBehaviour
 {
 
-    [SerializeField] float speed = 6.0f;
+    [SerializeField] float movementSpeed = 6.0f;
+    [SerializeField] float rotationSpeed = 10.0f;
 
     CharacterController characterController;
     Camera cam;
     Vector3 moveInput;
+    Vector3 targetDirection;
     
     void Start()
     {
@@ -22,7 +24,14 @@ public class PlayerController : MonoBehaviour
 
     private void Update()
     {
-        simpleMove(moveInput);
+
+        targetDirection = getTargetDirection(moveInput.x, moveInput.z);
+        targetDirection.Normalize();
+        simpleMove(targetDirection);
+        if (moveInput != Vector3.zero)
+        {
+            rotate(targetDirection);
+        }
     }
 
     public void requestMove(Vector2 input)
@@ -33,6 +42,13 @@ public class PlayerController : MonoBehaviour
     public void requestInteract()
     {
         Debug.Log("Interact");
+    }
+
+    public void rotate(Vector3 inputDirection)
+    {
+        // Rotate the player to face the direction using rotationSpeed
+        Quaternion targetRotation = Quaternion.LookRotation(inputDirection);
+        transform.rotation = Quaternion.Slerp(transform.rotation, targetRotation, rotationSpeed * Time.deltaTime);
     }
 
     Vector3 getTargetDirection(float inputx, float inputy)
@@ -46,15 +62,13 @@ public class PlayerController : MonoBehaviour
     void move(Vector3 moveInput)
     {
         Vector3 targetDirection = getTargetDirection(moveInput.x, moveInput.z);
-        targetDirection *= speed;
+        targetDirection *= movementSpeed;
         characterController.Move(targetDirection * Time.deltaTime);
     }
 
-    void simpleMove(Vector3 moveInput)
+    void simpleMove(Vector3 inputDirection)
     {
-        Vector3 targetDirection = getTargetDirection(moveInput.x, moveInput.z);
-        targetDirection.Normalize(); // Normalize the vector to prevent faster diagonal movement
-        targetDirection *= speed;
-        characterController.SimpleMove(targetDirection);
+        inputDirection *= movementSpeed;
+        characterController.SimpleMove(inputDirection);
     }
 }
