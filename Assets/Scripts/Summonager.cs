@@ -91,6 +91,10 @@ public class Summonager : MonoBehaviour
                 case State.Torso:
                     monsterObject.SpawnLegs(currentMonster);
                     currentMonster.Activate();
+                    foreach(DepositPoint point in depositPoints)
+                    {
+                        point.RemoveIngredient();
+                    }
                     break;
             }
 
