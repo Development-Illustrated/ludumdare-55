@@ -21,9 +21,8 @@ public class Ingredient : MonoBehaviour
             {
                 this.GetComponent<Rigidbody>().isKinematic = false;
                 this.GetComponent<Animator>().enabled = true;
+                this.GetComponent<Collider>().enabled = false;
             }
         }
     }
 }
-
-

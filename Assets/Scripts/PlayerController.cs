@@ -60,7 +60,8 @@ public class PlayerController : MonoBehaviour
         if (!currentIngredient)
         {
             Debug.Log("Picked up ingredient: " + ingredient);
-            currentIngredient = Instantiate(ingredient, orbHolder); // Duplicate ingredient game object to "pick it up"    
+            currentIngredient = Instantiate(ingredient, orbHolder); // Duplicate ingredient game object to "pick it up"   
+            currentIngredient.gameObject.SetActive(true);
             return true;
         }
         return false;
@@ -82,7 +83,6 @@ public class PlayerController : MonoBehaviour
 
     public void RequestInteract()
     {
-        Debug.Log("Interact");
         if(occupiedPedistal && !currentIngredient)
         {
             if (occupiedPedistal.PickUpOrb())

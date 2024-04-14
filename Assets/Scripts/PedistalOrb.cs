@@ -12,14 +12,6 @@ public class PedistalOrb : MonoBehaviour
     public bool isRespawning;
     private float respawnCounter;
 
-    // Start is called before the first frame update
-    void Start()
-    {
-        // ingredient = ingredients[Random.Range(0, ingredients.length)];
-        // orbRenderer.material.color = ingredient.color;
-    }
-
-    // Update is called once per frame
     void Update()
     {
         if (respawnCounter >= 0)
@@ -32,9 +24,6 @@ public class PedistalOrb : MonoBehaviour
             {
                 ingredient.gameObject.SetActive(true);
                 isRespawning = false;
-
-                // ingredient = ingredients[Random.Range(0, ingredients.length)];
-                // orbRenderer.material.color = ingredient.color;
             }
         }
     }
@@ -45,7 +34,7 @@ public class PedistalOrb : MonoBehaviour
         {
             return false;
         }
-        
+
         Debug.Log("Picked up ingredient: " + ingredient);
         ingredient.gameObject.SetActive(false);
         respawnCounter = Random.Range(minRespawnTime, maxRespawnTime);
