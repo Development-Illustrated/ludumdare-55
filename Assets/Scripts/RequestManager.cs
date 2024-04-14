@@ -98,7 +98,7 @@ public class RequestManager : MonoBehaviour
     {
         foreach (RequestedMonster request in activeRequests)
         {
-            if (request.head == monster.head && request.torso == monster.torso && request.legs == monster.legs)
+            if (request.head.name == monster.head.name && request.torso.name == monster.torso.name && request.legs.name == monster.legs.name)
             {
                 CompleteRequest(request);
                 return true;
