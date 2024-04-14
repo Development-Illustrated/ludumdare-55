@@ -16,6 +16,7 @@ public class PlayerController : MonoBehaviour
     [SerializeField] float yeetForce = 100f;
 
     Ingredient currentIngredient;
+    Door currentDoor;
     PedistalOrb occupiedPedistal;
 
     Summonager occupiedSummonager;
@@ -99,6 +100,11 @@ public class PlayerController : MonoBehaviour
                 currentIngredient = null;
             }
         }
+
+        if (currentDoor)
+        {
+            currentDoor.Activate();
+        }
     }
 
     public void Rotate(Vector3 inputDirection)
@@ -135,6 +141,12 @@ public class PlayerController : MonoBehaviour
         {
             occupiedSummonager = other.GetComponent<Summonager>();
         }
+
+        if (other.tag == "Door")
+        {
+            Door door = other.GetComponent<Door>();
+            currentDoor = door;
+        }
     }
 
     private void OnTriggerExit(Collider other)
@@ -155,6 +167,15 @@ public class PlayerController : MonoBehaviour
             if (exitingSummonager == occupiedSummonager)
             {
                 occupiedSummonager = null;
+            }
+        }
+
+        if (other.tag == "Door")
+        {
+            Door door = other.GetComponent<Door>();
+            if (door == currentDoor)
+            {
+                currentDoor = null;
             }
         }
     }
