@@ -20,7 +20,6 @@ public class PlayerController : MonoBehaviour
     Animator animator;
     Camera cam;
     Vector3 moveInput;
-    bool requestedInteract;
     Vector3 targetDirection;
     
     void Start()
@@ -46,7 +45,6 @@ public class PlayerController : MonoBehaviour
         {
             animator.SetBool("moving", false);
         }
-        requestedInteract = false;
     }
 
     public bool PickUpOrb(Ingredient ingredient)
