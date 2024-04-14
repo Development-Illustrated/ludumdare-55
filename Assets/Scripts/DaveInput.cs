@@ -24,4 +24,10 @@ public class DaveInput : MonoBehaviour
         if(debugMode){Debug.Log("OnInteract called");}
         this.gameObject.SendMessage("RequestInteract");
     }
+
+    public void OnYeet(InputValue value)
+    {
+        if(debugMode){Debug.Log("OnYeet called");}
+        this.gameObject.SendMessage("RequestYeet");
+    }
 }

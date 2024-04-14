@@ -44,6 +44,7 @@ GameObject:
   - component: {fileID: 6453734911262210129}
   - component: {fileID: 2223039706264947364}
   - component: {fileID: 8567129950895317361}
+  - component: {fileID: 6583351516573340451}
   m_Layer: 0
   m_Name: Player
   m_TagString: Player
@@ -152,7 +153,21 @@ MonoBehaviour:
   movementSpeed: 6
   rotationSpeed: 10
   orbHolder: {fileID: 1187723719805940710}
-  debugMode: 0
+  debugMode: 1
+  yeetForce: 50
+--- !u!114 &6583351516573340451
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8328996476891038087}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7c170876052514d64a4437f98516b53f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  debugMode: 1
 --- !u!1001 &7071225302591774253
 PrefabInstance:
   m_ObjectHideFlags: 0

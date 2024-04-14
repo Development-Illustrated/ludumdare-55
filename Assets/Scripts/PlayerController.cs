@@ -13,6 +13,8 @@ public class PlayerController : MonoBehaviour
     [SerializeField] Transform orbHolder;
     [SerializeField] bool debugMode = false;
 
+    [SerializeField] float yeetForce = 100f;
+
     Ingredient currentIngredient;
     PedistalOrb occupiedPedistal;
 
@@ -20,6 +22,9 @@ public class PlayerController : MonoBehaviour
 
     CharacterController characterController;
     Animator animator;
+
+    Yeet yeet;
+
     Camera cam;
     Vector3 moveInput;
     Vector3 targetDirection;
@@ -28,6 +33,7 @@ public class PlayerController : MonoBehaviour
     {   
         animator = GetComponentInChildren<Animator>();
         characterController = GetComponent<CharacterController>();
+        yeet = GetComponent<Yeet>();
         characterController.enableOverlapRecovery = true;
         cam = Camera.main;     
     }
@@ -65,6 +71,15 @@ public class PlayerController : MonoBehaviour
         moveInput = new Vector3(input.x, 0f, input.y);
     }
 
+    public void RequestYeet()
+    {
+        if (currentIngredient)
+        {
+            yeet.YeetObject(currentIngredient.gameObject, transform.forward, yeetForce, false);
+            currentIngredient = null;
+        }
+    }
+
     public void RequestInteract()
     {
         Debug.Log("Interact");
@@ -99,13 +114,6 @@ public class PlayerController : MonoBehaviour
         targetDirection = cam.transform.TransformDirection(targetDirection);
         targetDirection.y = 0.0f;
         return targetDirection;
-    }
-
-    void move(Vector3 moveInput)
-    {
-        Vector3 targetDirection = getTargetDirection(moveInput.x, moveInput.z);
-        targetDirection *= movementSpeed;
-        characterController.Move(targetDirection * Time.deltaTime);
     }
 
     void simpleMove(Vector3 inputDirection)
