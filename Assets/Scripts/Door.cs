@@ -26,14 +26,13 @@ public class Door : MonoBehaviour
 
     public void Activate()
     {
-        if(DoorType.Exit == doorType)
+        if(debugMode){Debug.Log("Door: Activate called for door type " + doorType);}
+        if(doorType == DoorType.Exit)
         {
-            if(debugMode){Debug.Log("Door: Activate called");}
             mainMenu.QuitGame();
         }
-        else if (DoorType.Start == doorType)
+        else if (doorType == DoorType.Start)
         {
-            if(debugMode){Debug.Log("Door: Activate called");}
             mainMenu.NewGame();
         }
     }
