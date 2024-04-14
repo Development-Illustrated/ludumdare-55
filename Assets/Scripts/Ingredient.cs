@@ -10,6 +10,13 @@ public class Ingredient : MonoBehaviour
 
     private void OnTriggerEnter(Collider other)
     {
+
+        // Dont trigger if held by player
+        if(this.transform.parent != null)
+        {
+            return;
+        }
+
         if(debugMode){Debug.Log("PlayerController: OnTriggerEnter called with " + other.tag);}
 
         if (other.tag == "Summonager")
@@ -19,10 +26,22 @@ public class Ingredient : MonoBehaviour
             bool gr8Success = hitSummonager.Deposit(this);
             if (gr8Success)
             {
-                this.GetComponent<Rigidbody>().isKinematic = false;
-                this.GetComponent<Animator>().enabled = true;
-                this.GetComponent<Collider>().enabled = false;
+                LetsGetMagical();
             }
         }
+    }
+
+    public void LetsGetPhysical()
+    {
+        if(debugMode){Debug.Log("Ingredient: LetsGetPhysical called");}
+        this.GetComponent<Animator>().enabled = false;
+        this.GetComponent<Collider>().enabled = true;
+    }
+
+    public void LetsGetMagical()
+    {
+        if(debugMode){Debug.Log("Ingredient: LetsGetMagical called");}
+        this.GetComponent<Animator>().enabled = true;
+        this.GetComponent<Collider>().enabled = false;
     }
 }

@@ -61,6 +61,7 @@ public class PlayerController : MonoBehaviour
         if (!currentIngredient)
         {
             Debug.Log("Picked up ingredient: " + ingredient);
+            ingredient.LetsGetMagical();
             currentIngredient = Instantiate(ingredient, orbHolder); // Duplicate ingredient game object to "pick it up"   
             currentIngredient.gameObject.SetActive(true);
             return true;
@@ -77,7 +78,7 @@ public class PlayerController : MonoBehaviour
     {
         if (currentIngredient)
         {
-            yeet.YeetObject(currentIngredient.gameObject, transform.forward, yeetForce, false);
+            yeet.YeetObject(currentIngredient.gameObject, transform.forward, yeetForce);
             currentIngredient = null;
         }
     }
@@ -90,6 +91,7 @@ public class PlayerController : MonoBehaviour
             {
                 PickUpOrb(occupiedPedistal.ingredient);
             }
+            return;
         }
 
         if(occupiedSummonager && currentIngredient)
@@ -99,12 +101,52 @@ public class PlayerController : MonoBehaviour
             {
                 currentIngredient = null;
             }
+            return;
         }
 
-        if (currentDoor)
+        if(currentDoor)
         {
             currentDoor.Activate();
+            return;
         }
+
+        // Get closest ingredient loose on floor
+        Ingredient closestFloorIngredient = FindClosestIngredient();
+        if(debugMode){Debug.Log("PlayerController: Closest floor ingredient: " + closestFloorIngredient);}
+        if (closestFloorIngredient)
+        {
+            if (PickUpOrb(closestFloorIngredient))
+            {
+                Destroy(closestFloorIngredient.gameObject);
+            }
+            return;
+        }
+    }
+
+    private Ingredient FindClosestIngredient()
+    {
+        Collider[] hitColliders = Physics.OverlapSphere(transform.position, 5f);
+        List<Ingredient> ingredients = new List<Ingredient>();
+
+        for(int i = 0; i < hitColliders.Length; i++)
+        {
+            if(hitColliders[i].tag == "Ingredient")
+            {
+                ingredients.Add(hitColliders[i].GetComponent<Ingredient>());
+            }
+        }
+        Ingredient closestIngredient = null;
+        float closestDistance = Mathf.Infinity;
+        foreach(Ingredient ingredient in ingredients)
+        {
+            float distance = Vector3.Distance(transform.position, ingredient.transform.position);
+            if(distance < closestDistance)
+            {
+                closestDistance = distance;
+                closestIngredient = ingredient;
+            }
+        }
+        return closestIngredient;
     }
 
     public void Rotate(Vector3 inputDirection)
