@@ -154,8 +154,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0d82c10d13b9e422091b7b3b7d14aa8d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  minRespawnTime: 5
-  maxRespawnTime: 30
+  minRespawnTime: 3
+  maxRespawnTime: 8
   ingredient: {fileID: 1877808993267356690}
   isRespawning: 0
 --- !u!65 &7596478263486176394

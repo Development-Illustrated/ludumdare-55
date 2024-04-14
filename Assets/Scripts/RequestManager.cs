@@ -1,5 +1,7 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
+using System.Linq;
 using UnityEditor;
 using UnityEngine;
 
@@ -8,7 +10,7 @@ public class RequestManager : MonoBehaviour
     public static RequestManager instance;
 
     [SerializeField]
-    protected GameObject spawnPoint;
+    protected GameObject[] spawnPointPrefabs;
 
     [SerializeField]
     protected GameObject requestMonsterPrefab;
@@ -33,11 +35,21 @@ public class RequestManager : MonoBehaviour
         Active
     }
 
+    protected Dictionary<GameObject, RequestedMonster> spawnPoints = new Dictionary<GameObject, RequestedMonster>();
+
     protected State currentState = State.Paused;
 
     private void Awake()
     {
         CreateSingleton();
+    }
+    
+    private void Start()
+    {
+        foreach(GameObject spawnPoint in spawnPointPrefabs)
+        {
+            spawnPoints.Add(spawnPoint, null);
+        }
     }
 
     private void CreateSingleton()
@@ -113,6 +125,8 @@ public class RequestManager : MonoBehaviour
     private void RemoveRequest(RequestedMonster request)
     {
         activeRequests.Remove(request);
+        GameObject keyToRemove = spawnPoints.FirstOrDefault(kv => kv.Value == request).Key;
+        spawnPoints.Remove(keyToRemove);
         Destroy(request.gameObject);
     }
 
@@ -122,8 +136,11 @@ public class RequestManager : MonoBehaviour
         GameObject randomTorso = monsterScriptableObjects[UnityEngine.Random.Range(0, monsterScriptableObjects.Length)].torsoPrefab;
         GameObject randomLegs = monsterScriptableObjects[UnityEngine.Random.Range(0, monsterScriptableObjects.Length)].legsPrefab;
 
-        GameObject newRequest = Instantiate(requestMonsterPrefab, spawnPoint.transform.position, Quaternion.identity);
+
+        KeyValuePair<GameObject, RequestedMonster> spawnPoint = spawnPoints.FirstOrDefault(kv => kv.Value == null);
+        GameObject newRequest = Instantiate(requestMonsterPrefab, spawnPoint.Key.transform.position, Quaternion.identity);
         RequestedMonster requestScript = newRequest.GetComponent<RequestedMonster>();
+        spawnPoints[spawnPoint.Key] = requestScript;
 
         requestScript.AddHead(randomHead);
         requestScript.AddTorso(randomTorso);
