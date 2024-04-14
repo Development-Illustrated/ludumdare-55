@@ -1,0 +1,20 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: db2931514c0d34b98a36418e2e0ee671, type: 3}
+  m_Name: RodMan
+  m_EditorClassIdentifier: 
+  headPrefab: {fileID: 8494325827024926796, guid: 5923cf153f0eee449abbe190ee131067,
+    type: 3}
+  torsoPrefab: {fileID: 4867742783453179667, guid: 72077696d6f1ac146a0a4c5044f66cd3,
+    type: 3}
+  legsPrefab: {fileID: 9189336953561731820, guid: 76114667b958de441834fb74db45c00f,
+    type: 3}

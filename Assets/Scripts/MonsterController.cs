@@ -31,30 +31,34 @@ public class MonsterController : MonoBehaviour
     void Update()
     {
         currentState = monster.currentState;
-
-        if (waitTime >= 0)
+        if (currentState != MonsterState.Building)
         {
-            waitTime -= Time.deltaTime;
-        }
-        else
-        {
-            isMoving = false;
-        }
-
-        if (!isMoving)
-        {
-            switch (currentState)
+            if (waitTime >= 0)
             {
-                case MonsterState.Angry:
-                case MonsterState.Loving:
-                    agent.SetDestination(MoveTowardsPlayer());
-                    break;
-                case MonsterState.Passive:
-                default:
-                    agent.SetDestination(RandomNavmeshLocation());
-                    break;
+                waitTime -= Time.deltaTime;
             }
+            else
+            {
+                isMoving = false;
+            }
+
+            if (!isMoving)
+            {
+                switch (currentState)
+                {
+                    case MonsterState.Angry:
+                    case MonsterState.Loving:
+                        agent.SetDestination(MoveTowardsPlayer());
+                        break;
+                    case MonsterState.Passive:
+                    default:
+                        agent.SetDestination(RandomNavmeshLocation());
+                        break;
+                }
+            }
+
         }
+
     }
 
     private void MakePlayerYeet()
