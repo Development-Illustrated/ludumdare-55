@@ -523,7 +523,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 277910242}
   serializedVersion: 2
-  m_LocalRotation: {x: -0.073071, y: 0.000000012563966, z: -0.000000011756113, w: 0.9973268}
+  m_LocalRotation: {x: -0.073071, y: -0.000000012563966, z: 0.000000011756113, w: 0.9973268}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
@@ -1201,7 +1201,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 632346846}
   serializedVersion: 2
-  m_LocalRotation: {x: -0.109250605, y: -0.000000031801022, z: 0.000000027659562,
+  m_LocalRotation: {x: -0.109250605, y: 0.000000031801022, z: -0.000000027659562,
     w: 0.99401426}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
@@ -3065,7 +3065,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1183749662}
   serializedVersion: 2
-  m_LocalRotation: {x: 0.33304244, y: 0.0000000162241, z: -0.0000000057304543, w: 0.94291186}
+  m_LocalRotation: {x: 0.33304244, y: -0.0000000162241, z: 0.0000000057304543, w: 0.94291186}
   m_LocalPosition: {x: 0, y: 10, z: -12.39}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
@@ -3928,7 +3928,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1593504353}
   serializedVersion: 2
-  m_LocalRotation: {x: -0.091199726, y: 1.7015993e-15, z: -1.6025777e-15, w: 0.9958327}
+  m_LocalRotation: {x: -0.091199785, y: 0.00000002212821, z: -0.000000019962991, w: 0.9958327}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
@@ -4611,13 +4611,13 @@ Transform:
   - {fileID: 37314803}
   - {fileID: 643880205}
   - {fileID: 77955756}
-  - {fileID: 416329057}
   - {fileID: 1461615722}
   - {fileID: 505907225}
   - {fileID: 406885678}
   - {fileID: 1708477062}
   - {fileID: 558700452}
   - {fileID: 1528541020}
+  - {fileID: 416329057}
   m_Father: {fileID: 1138151380}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &2003868557
