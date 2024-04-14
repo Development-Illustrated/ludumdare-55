@@ -3,11 +3,25 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Rendering;
 
+public enum MonsterState
+{
+    Passive,
+    Angry
+}
+
 public class Monster : MonoBehaviour
 {
-    GameObject head;
-    GameObject torso;
-    GameObject legs;
+    public GameObject head;
+    public GameObject torso;
+    public GameObject legs;
+
+
+    private MonsterState currentState = MonsterState.Passive;
+
+    public void SetState(MonsterState state)
+    {
+        currentState = state;
+    }
 
     public void AddHead(GameObject headPrefab)
     {
@@ -59,8 +73,16 @@ public class Monster : MonoBehaviour
         }
     }
 
-    public void Activate()
+    public virtual void Activate()
     {
-        // DO A THING?!
+        bool result = RequestManager.instance.CheckRequest(this);
+        if (result)
+        {
+            Destroy(gameObject);
+        }
+        else
+        {
+            SetState(MonsterState.Angry);
+        }
     }
 }
