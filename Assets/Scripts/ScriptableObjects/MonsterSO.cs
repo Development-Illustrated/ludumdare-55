@@ -6,11 +6,11 @@ using UnityEngine;
 public class MonsterSO : ScriptableObject
 {
     [SerializeField]
-    protected GameObject headPrefab;
+    public GameObject headPrefab;
     [SerializeField]
-    protected GameObject torsoPrefab;
+    public GameObject torsoPrefab;
     [SerializeField]
-    protected GameObject legsPrefab;
+    public GameObject legsPrefab;
 
     public void SpawnHead(Monster parentMonster)
     {
