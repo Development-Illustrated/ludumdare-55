@@ -84,9 +84,7 @@ public class Summonager : MonoBehaviour
                     monsterObject.SpawnHead(currentMonster);
                     break;
                 case State.Head:
-                    // add collidert and look for extents
-                    // currentMonster.gameObject.transform.position = 
-                    monsterObject.SpwawnTorso(currentMonster);
+                    monsterObject.SpawnTorso(currentMonster);
                     break;
                 case State.Torso:
                     monsterObject.SpawnLegs(currentMonster);

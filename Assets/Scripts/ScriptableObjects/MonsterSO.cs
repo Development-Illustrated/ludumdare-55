@@ -23,7 +23,7 @@ public class MonsterSO : ScriptableObject
             Debug.LogError("Head prefab not set");
         }
     }
-    public void SpwawnTorso(Monster parentMonster)
+    public void SpawnTorso(Monster parentMonster)
     {
         if (torsoPrefab)
         {
