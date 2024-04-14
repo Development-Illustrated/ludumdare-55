@@ -6,6 +6,7 @@ using UnityEngine.Rendering;
 public enum MonsterState
 {
     Passive,
+    Loving,
     Angry
 }
 

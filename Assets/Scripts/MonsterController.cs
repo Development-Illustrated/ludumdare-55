@@ -13,29 +13,59 @@ public class MonsterController : MonoBehaviour
 
     private float waitTime = 0;
     private bool isMoving = false;
+    private MonsterState currentState;
+
+    void Start()
+    {
+        agent = gameObject.GetComponent<NavMeshAgent>();
+    }
 
     // Update is called once per frame
     void Update()
     {
-        if (gameObject.GetComponent<Monster>().currentState == MonsterState.Angry)
+        Monster monster = gameObject.GetComponent<Monster>()
+        currentState = monster.currentState;
+        if (waitTime >= 0)
         {
-            if (waitTime >= 0)
-            {
-                waitTime -= Time.deltaTime;
-            }
-            else
-            {
-                isMoving = false;
-            }
+            waitTime -= Time.deltaTime;
+        }
+        else
+        {
+            isMoving = false;
+        }
 
-            if (!isMoving)
+        if (!isMoving)
+        {
+            switch (currentState)
             {
-                agent.SetDestination(RandomNavmeshLocation());
+                case MonsterState.Angry:
+                case MonsterState.Loving:
+                    agent.SetDestination(MoveTowardsPlayer());
+                    break;
+                case MonsterState.Passive:
+                default:
+                    agent.SetDestination(RandomNavmeshLocation());
+                    break;
             }
         }
     }
 
-    public Vector3 RandomNavmeshLocation()
+    private void MakePlayerYeet()
+    {
+        if (currentState == MonsterState.Angry)
+        {
+            // Cause yeet on contact
+            // After yeet move away -> return RandomNavmeshLocation()
+        }
+    }
+
+    private Vector3 MoveTowardsPlayer()
+    {
+        GameObject player = GameObject.Find("Player");
+        return player.transform.position;
+    }
+
+    private Vector3 RandomNavmeshLocation()
     {
         isMoving = true;
         waitTime = Random.Range(minWaitTime, maxWaitTime);
