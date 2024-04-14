@@ -85,9 +85,9 @@ public class PlayerController : MonoBehaviour
         Debug.Log("Interact");
         if(occupiedPedistal && !currentIngredient)
         {
-            if (PickUpOrb(occupiedPedistal.ingredient))
+            if (occupiedPedistal.PickUpOrb())
             {
-                occupiedPedistal.PickUpOrb();
+                PickUpOrb(occupiedPedistal.ingredient);
             }
         }
 

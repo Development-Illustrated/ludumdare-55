@@ -39,11 +39,17 @@ public class PedistalOrb : MonoBehaviour
         }
     }
 
-    public void PickUpOrb()
+    public bool PickUpOrb()
     {
+        if (isRespawning)
+        {
+            return false;
+        }
+        
         Debug.Log("Picked up ingredient: " + ingredient);
         ingredient.gameObject.SetActive(false);
         respawnCounter = Random.Range(minRespawnTime, maxRespawnTime);
         isRespawning = true;
+        return true;
     }
 }
