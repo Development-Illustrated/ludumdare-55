@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class RequestedMonster : Monster
+public class RequestedMonster : BaseMonster
 {
     // Defaults to 25
     public int durationInSeconds;
