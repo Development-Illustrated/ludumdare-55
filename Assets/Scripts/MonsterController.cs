@@ -10,6 +10,7 @@ public class MonsterController : MonoBehaviour
     [SerializeField] protected float minWaitTime;
     [SerializeField] protected float maxWaitTime;
     [SerializeField] protected float walkRadius;
+    [SerializeField] protected float playerProximity;
 
     private float waitTime = 0;
     private bool isMoving = false;
@@ -25,6 +26,7 @@ public class MonsterController : MonoBehaviour
     {
         Monster monster = gameObject.GetComponent<Monster>();
         currentState = monster.currentState;
+
         if (waitTime >= 0)
         {
             waitTime -= Time.deltaTime;
@@ -52,16 +54,23 @@ public class MonsterController : MonoBehaviour
 
     private void MakePlayerYeet()
     {
-        if (currentState == MonsterState.Angry)
-        {
-            // Cause yeet on contact
-            // After yeet move away -> return RandomNavmeshLocation()
-        }
+        Monster monster = gameObject.GetComponent<Monster>();
+        GameObject player = GameObject.Find("Player");
+
+        player.GetComponent<PlayerController>().RequestYeet();
+        monster.SetState(MonsterState.Passive);
     }
 
     private Vector3 MoveTowardsPlayer()
     {
         GameObject player = GameObject.Find("Player");
+        Vector3 proximityToPlayer = player.transform.position.normalized - transform.position.normalized;
+
+        if ((Mathf.Abs(proximityToPlayer.x) + Mathf.Abs(proximityToPlayer.z)) <= playerProximity && currentState == MonsterState.Angry)
+        {
+            MakePlayerYeet();
+        }
+
         return player.transform.position;
     }
 
