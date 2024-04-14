@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.AI;
 using UnityEngine.Rendering;
 
 public enum MonsterState
@@ -22,6 +23,12 @@ public class Monster : BaseMonster
         }
         else
         {
+            this.GetComponent<NavMeshAgent>().enabled = true;
+            BoxCollider[] colliders = this.GetComponents<BoxCollider>();
+            foreach(BoxCollider collider in colliders) 
+            {
+                collider.enabled = false;
+            }
             SetState(MonsterState.Angry);
         }
     }
