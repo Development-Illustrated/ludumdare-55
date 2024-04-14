@@ -91,12 +91,17 @@ public class Summonager : MonoBehaviour
                     monsterObject.SpawnTorso(currentMonster);
                     currentMonster.transform.position = new Vector3(
                         currentMonster.transform.position.x,
-                        currentMonster.transform.position.y + currentMonster.torso.GetComponent<BoxCollider>().size.y, 
+                        currentMonster.transform.position.y + currentMonster.torso.GetComponent<BoxCollider>().size.y / 2, 
                         currentMonster.transform.position.z
                     );
                     break;
                 case State.Torso:
                     monsterObject.SpawnLegs(currentMonster);
+                    currentMonster.transform.position = new Vector3(
+                        currentMonster.transform.position.x,
+                        currentMonster.transform.position.y + currentMonster.legs.GetComponent<BoxCollider>().size.y / 2, 
+                        currentMonster.transform.position.z
+                    );
                   
                     currentMonster.Activate();
                     foreach (DepositPoint point in depositPoints)
