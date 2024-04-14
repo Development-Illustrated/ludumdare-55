@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.AI;
 
@@ -12,29 +13,30 @@ public class MonsterController : MonoBehaviour
 
     private float waitTime = 0;
     private bool isMoving = false;
-    // Start is called before the first frame update
-    void Start()
-    {
-        
-    }
 
     // Update is called once per frame
     void Update()
     {
-        if (waitTime >= 0) {
-            waitTime -= Time.deltaTime;
-        }
-        else
+        if (gameObject.GetComponent<Monster>().currentState == MonsterState.Angry)
         {
-            isMoving = false;
-        }
+            if (waitTime >= 0)
+            {
+                waitTime -= Time.deltaTime;
+            }
+            else
+            {
+                isMoving = false;
+            }
 
-        if (!isMoving) {
-            agent.SetDestination(RandomNavmeshLocation());
+            if (!isMoving)
+            {
+                agent.SetDestination(RandomNavmeshLocation());
+            }
         }
     }
 
-    public Vector3 RandomNavmeshLocation() {
+    public Vector3 RandomNavmeshLocation()
+    {
         isMoving = true;
         waitTime = Random.Range(minWaitTime, maxWaitTime);
 
@@ -42,8 +44,9 @@ public class MonsterController : MonoBehaviour
         randomDirection += transform.position;
         NavMeshHit hit;
         Vector3 finalPosition = Vector3.zero;
-        if (NavMesh.SamplePosition(randomDirection, out hit, walkRadius, 1)) {
-            finalPosition = hit.position;            
+        if (NavMesh.SamplePosition(randomDirection, out hit, walkRadius, 1))
+        {
+            finalPosition = hit.position;
         }
         return finalPosition;
     }

@@ -9,7 +9,7 @@ public class BaseMonster : MonoBehaviour
     [HideInInspector] public GameObject legs;
 
 
-    private MonsterState currentState = MonsterState.Passive;
+    public MonsterState currentState = MonsterState.Passive;
 
     public void SetState(MonsterState state)
     {
