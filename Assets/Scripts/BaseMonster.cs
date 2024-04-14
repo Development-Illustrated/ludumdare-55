@@ -4,9 +4,9 @@ using UnityEngine;
 
 public class BaseMonster : MonoBehaviour
 {
-    public GameObject head;
-    public GameObject torso;
-    public GameObject legs;
+    [HideInInspector] public GameObject head;
+    [HideInInspector] public GameObject torso;
+    [HideInInspector] public GameObject legs;
 
 
     private MonsterState currentState = MonsterState.Passive;
