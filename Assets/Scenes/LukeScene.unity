@@ -1055,6 +1055,42 @@ PrefabInstance:
       propertyPath: m_Name
       value: SummoningCircle
       objectReference: {fileID: 0}
+    - target: {fileID: 5932486837258097316, guid: 642e13247b9e34f4fb7fbb97bbc67888,
+        type: 3}
+      propertyPath: monsterObjects.Array.data[0]
+      value: 
+      objectReference: {fileID: 11400000, guid: 6ac947cd31fb9834d8a551d8901be9f5,
+        type: 2}
+    - target: {fileID: 5932486837258097316, guid: 642e13247b9e34f4fb7fbb97bbc67888,
+        type: 3}
+      propertyPath: monsterObjects.Array.data[1]
+      value: 
+      objectReference: {fileID: 11400000, guid: 6ac947cd31fb9834d8a551d8901be9f5,
+        type: 2}
+    - target: {fileID: 5932486837258097316, guid: 642e13247b9e34f4fb7fbb97bbc67888,
+        type: 3}
+      propertyPath: monsterObjects.Array.data[2]
+      value: 
+      objectReference: {fileID: 11400000, guid: 6ac947cd31fb9834d8a551d8901be9f5,
+        type: 2}
+    - target: {fileID: 5932486837258097316, guid: 642e13247b9e34f4fb7fbb97bbc67888,
+        type: 3}
+      propertyPath: monsterObjects.Array.data[3]
+      value: 
+      objectReference: {fileID: 11400000, guid: 6ac947cd31fb9834d8a551d8901be9f5,
+        type: 2}
+    - target: {fileID: 5932486837258097316, guid: 642e13247b9e34f4fb7fbb97bbc67888,
+        type: 3}
+      propertyPath: monsterObjects.Array.data[4]
+      value: 
+      objectReference: {fileID: 11400000, guid: 6ac947cd31fb9834d8a551d8901be9f5,
+        type: 2}
+    - target: {fileID: 5932486837258097316, guid: 642e13247b9e34f4fb7fbb97bbc67888,
+        type: 3}
+      propertyPath: monsterObjects.Array.data[5]
+      value: 
+      objectReference: {fileID: 11400000, guid: 6ac947cd31fb9834d8a551d8901be9f5,
+        type: 2}
     - target: {fileID: 6595286408397196158, guid: 642e13247b9e34f4fb7fbb97bbc67888,
         type: 3}
       propertyPath: m_LocalPosition.x

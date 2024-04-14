@@ -34,12 +34,14 @@ public class Summonager : MonoBehaviour
     private void Start()
     {
         Ingredient[] ingredients = FindObjectsOfType<Ingredient>();
+
         Color[] colors = ingredients.Select(ingredient => ingredient.color).ToArray();
 
         // Fill the dictionary with the monsters and their respective colors
         foreach (MonsterSO monsterObject in monsterObjects)
         {
             Color randomColor = colors[UnityEngine.Random.Range(0, colors.Length)];
+            Debug.Log("Assigning " + monsterObject.name + " to Color " + randomColor.ToString());
 
             while (monsterMap.ContainsKey(randomColor))
             {
@@ -48,7 +50,9 @@ public class Summonager : MonoBehaviour
 
             monsterMap.Add(randomColor, monsterObject);
         }
+
     }
+
 
     public bool Deposit(Ingredient depositedIngredient)
     {

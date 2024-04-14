@@ -15,16 +15,21 @@ public class MonsterController : MonoBehaviour
     private float waitTime = 0;
     private bool isMoving = false;
     private MonsterState currentState;
+    private Monster monster;
+    private GameObject player;
+    private PlayerController playerController;
 
     void Start()
     {
+        monster = gameObject.GetComponent<Monster>();
+        player = GameObject.Find("Player");
         agent = gameObject.GetComponent<NavMeshAgent>();
+        playerController = player.GetComponent<PlayerController>();
     }
 
     // Update is called once per frame
     void Update()
     {
-        Monster monster = gameObject.GetComponent<Monster>();
         currentState = monster.currentState;
 
         if (waitTime >= 0)
@@ -54,16 +59,12 @@ public class MonsterController : MonoBehaviour
 
     private void MakePlayerYeet()
     {
-        Monster monster = gameObject.GetComponent<Monster>();
-        GameObject player = GameObject.Find("Player");
-
-        player.GetComponent<PlayerController>().RequestYeet();
+        playerController.RequestYeet();
         monster.SetState(MonsterState.Passive);
     }
 
     private Vector3 MoveTowardsPlayer()
     {
-        GameObject player = GameObject.Find("Player");
         Vector3 proximityToPlayer = player.transform.position.normalized - transform.position.normalized;
 
         if ((Mathf.Abs(proximityToPlayer.x) + Mathf.Abs(proximityToPlayer.z)) <= playerProximity && currentState == MonsterState.Angry)
