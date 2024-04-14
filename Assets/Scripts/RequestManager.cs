@@ -125,7 +125,8 @@ public class RequestManager : MonoBehaviour
     private void RemoveRequest(RequestedMonster request)
     {
         activeRequests.Remove(request);
-        spawnPoints.Remove(spawnPoints.FirstOrDefault(kv => kv.Value == request).Key);
+        GameObject keyToRemove = spawnPoints.FirstOrDefault(kv => kv.Value == request).Key;
+        spawnPoints[keyToRemove] = null;
         Destroy(request.gameObject);
     }
 
@@ -137,6 +138,8 @@ public class RequestManager : MonoBehaviour
 
 
         KeyValuePair<GameObject, RequestedMonster> spawnPoint = spawnPoints.FirstOrDefault(kv => kv.Value == null);
+        Debug.Log(spawnPoint.Key);
+        Debug.Log(spawnPoint.Value);
         GameObject newRequest = Instantiate(requestMonsterPrefab, spawnPoint.Key.transform.position, Quaternion.identity);
         RequestedMonster requestScript = newRequest.GetComponent<RequestedMonster>();
         spawnPoints[spawnPoint.Key] = requestScript;
