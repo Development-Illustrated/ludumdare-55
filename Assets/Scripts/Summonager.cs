@@ -56,7 +56,7 @@ public class Summonager : MonoBehaviour
                 randomColor = (OrbColor)Random.Range(0, System.Enum.GetValues(typeof(OrbColor)).Length);
             }
 
-            summonagerMap.Add(randomColor, monsterObject);
+            monsterMap.Add(randomColor, monsterObject);
         }
     }
 
