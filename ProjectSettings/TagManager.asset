@@ -5,6 +5,7 @@ TagManager:
   serializedVersion: 2
   tags:
   - Pedastal
+  - Summonager
   layers:
   - Default
   - TransparentFX

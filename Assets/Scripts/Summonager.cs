@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using Unity.VisualScripting;
 using UnityEngine;
 
 public class Summonager : MonoBehaviour
@@ -14,6 +15,8 @@ public class Summonager : MonoBehaviour
 
     [SerializeField]
     protected GameObject spawnPoint;
+
+    [SerializeField] protected DepositPoint[] depositPoints;
 
     Dictionary<OrbColor, MonsterSO> monsterMap = new Dictionary<OrbColor, MonsterSO>();
 
@@ -60,8 +63,27 @@ public class Summonager : MonoBehaviour
         }
     }
 
-    public void Deposit(Ingredient depositedIngredient)
+    public bool Deposit(Ingredient depositedIngredient)
     {
+
+        // Physically move the ingredient to the deposit point
+        bool deposited = false;
+        for (int i = 0; i < depositPoints.Length; i++)
+        {
+            if (depositPoints[i].CurrentIngredient == null)
+            {
+                depositPoints[i].DepositIngredient(depositedIngredient);
+                deposited = true;
+                break;
+            }
+        }
+
+        if (!deposited)
+        {
+            Debug.LogError("No deposit point available");
+            return false;
+        }
+        
         // Grab the monsterObject that corresponds to the color of the deposited ingredient
         if (monsterMap.ContainsKey(depositedIngredient.color))
         {
@@ -91,6 +113,8 @@ public class Summonager : MonoBehaviour
         {
             Debug.LogError("No monster found for color " + depositedIngredient.color);
         }
+
+        return true;
     }
 
     protected void UpdateState()

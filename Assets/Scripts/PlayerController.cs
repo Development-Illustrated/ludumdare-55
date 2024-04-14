@@ -16,6 +16,8 @@ public class PlayerController : MonoBehaviour
     Ingredient currentIngredient;
     PedistalOrb occupiedPedistal;
 
+    Summonager occupiedSummonager;
+
     CharacterController characterController;
     Animator animator;
     Camera cam;
@@ -73,6 +75,15 @@ public class PlayerController : MonoBehaviour
                 occupiedPedistal.PickUpOrb();
             }
         }
+
+        if(occupiedSummonager && currentIngredient)
+        {
+            bool gr8Success = occupiedSummonager.Deposit(currentIngredient);
+            if (gr8Success)
+            {
+                currentIngredient = null;
+            }
+        }
     }
 
     public void Rotate(Vector3 inputDirection)
@@ -111,6 +122,11 @@ public class PlayerController : MonoBehaviour
         {
             occupiedPedistal = other.GetComponent<PedistalOrb>();
         }
+
+        if (other.tag == "Summonager" && !occupiedSummonager)
+        {
+            occupiedSummonager = other.GetComponent<Summonager>();
+        }
     }
 
     private void OnTriggerExit(Collider other)
@@ -122,6 +138,15 @@ public class PlayerController : MonoBehaviour
             if (exitingPedistal == occupiedPedistal)
             {
                 occupiedPedistal = null;
+            }
+        }
+
+        if (other.tag == "Summonager")
+        {
+            Summonager exitingSummonager = other.GetComponent<Summonager>();
+            if (exitingSummonager == occupiedSummonager)
+            {
+                occupiedSummonager = null;
             }
         }
     }
