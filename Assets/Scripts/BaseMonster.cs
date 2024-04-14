@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class BaseMonster : MonoBehaviour
+public abstract class BaseMonster : MonoBehaviour
 {
     [HideInInspector] public GameObject head;
     [HideInInspector] public GameObject torso;
@@ -66,8 +66,5 @@ public class BaseMonster : MonoBehaviour
         }
     }
 
-    public virtual void Activate()
-    {
-        // No implementation
-    }
+    public abstract void Activate();
 }
