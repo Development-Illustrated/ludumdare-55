@@ -34,6 +34,7 @@ Transform:
   - {fileID: 5688427349493322108}
   - {fileID: 8373449448976457530}
   - {fileID: 477320129012059506}
+  - {fileID: 9098754478168822727}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1344005947854413735
@@ -763,6 +764,37 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   ingredientHolder: {fileID: 5417665895229431884}
+--- !u!1 &6014783833766250427
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 9098754478168822727}
+  m_Layer: 0
+  m_Name: SummonPoint
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &9098754478168822727
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6014783833766250427}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 1.64, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 6595286408397196158}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &7193671867785994076
 GameObject:
   m_ObjectHideFlags: 0
@@ -911,7 +943,7 @@ MonoBehaviour:
   - {fileID: 11400000, guid: 99a018fd8a549459bb3cd25fffc29246, type: 2}
   monsterPrefab: {fileID: 2796255949123626417, guid: 847d5ac92f5a64c0283da2b6ec592a0e,
     type: 3}
-  spawnPoint: {fileID: 1344005947854413735}
+  spawnPoint: {fileID: 6014783833766250427}
   depositPoints:
   - {fileID: 8625619392678684009}
   - {fileID: 5050525323447134448}
