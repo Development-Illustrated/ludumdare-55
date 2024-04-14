@@ -24,8 +24,7 @@ public class Summonager : MonoBehaviour
     {
         Empty,
         Head,
-        Torso,
-        Legs
+        Torso
     }
 
     protected State currentState = State.Empty;
@@ -53,7 +52,6 @@ public class Summonager : MonoBehaviour
 
     public bool Deposit(Ingredient depositedIngredient)
     {
-
         // Physically move the ingredient to the deposit point
         bool deposited = false;
         for (int i = 0; i < depositPoints.Length; i++)
@@ -93,7 +91,7 @@ public class Summonager : MonoBehaviour
                 case State.Torso:
                     monsterObject.SpawnLegs(currentMonster);
                     currentMonster.Activate();
-                    foreach(DepositPoint point in depositPoints)
+                    foreach (DepositPoint point in depositPoints)
                     {
                         point.RemoveIngredient();
                     }
@@ -123,12 +121,7 @@ public class Summonager : MonoBehaviour
         }
         else if (currentState == State.Torso)
         {
-            currentState = State.Legs;
-        }
-        else if (currentState == State.Legs)
-        {
             currentState = State.Empty;
-
             currentMonster = null;
         }
     }
