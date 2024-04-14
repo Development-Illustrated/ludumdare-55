@@ -7,11 +7,15 @@ public class GameManager : MonoBehaviour
 {
     public static GameManager instance;
 
-
-    private Ingredient[] Ingredients;
+    protected int score = 0;
 
     [HideInInspector]
     private List<Color> OrbColors = new List<Color>();
+
+    public void IncrementScore(int scoreValue)
+    {
+        score = score + scoreValue;
+    }
 
     private void CreateSingleton()
     {
