@@ -112,7 +112,7 @@ public class RequestManager : MonoBehaviour
     private void RemoveRequest(RequestedMonster request)
     {
         activeRequests.Remove(request);
-        Destroy(request);
+        Destroy(request.gameObject);
     }
 
     private RequestedMonster GenerateRequest()

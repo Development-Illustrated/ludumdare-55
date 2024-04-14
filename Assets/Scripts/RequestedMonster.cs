@@ -5,7 +5,7 @@ using UnityEngine;
 public class RequestedMonster : BaseMonster
 {
     // Defaults to 25
-    public int durationInSeconds;
+    [HideInInspector] public int durationInSeconds;
 
     private IEnumerator TimeoutRequest()
     {

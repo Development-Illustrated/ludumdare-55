@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using System.Linq;
 using Unity.VisualScripting;
 using UnityEngine;
 
@@ -17,7 +18,7 @@ public class Summonager : MonoBehaviour
 
     [SerializeField] protected DepositPoint[] depositPoints;
 
-    Dictionary<OrbColor, MonsterSO> monsterMap = new Dictionary<OrbColor, MonsterSO>();
+    Dictionary<Color, MonsterSO> monsterMap = new Dictionary<Color, MonsterSO>();
 
     protected enum State
     {
@@ -31,15 +32,19 @@ public class Summonager : MonoBehaviour
 
     protected Monster currentMonster;
 
-    private void Awake()
+    private void Start()
     {
+        Ingredient[] ingredients = FindObjectsOfType<Ingredient>();
+        Color[] colors = ingredients.Select(ingredient => ingredient.color).ToArray();
+
         // Fill the dictionary with the monsters and their respective colors
         foreach (MonsterSO monsterObject in monsterObjects)
         {
-            OrbColor randomColor = (OrbColor)Random.Range(0, System.Enum.GetValues(typeof(OrbColor)).Length);
+            Color randomColor = colors[UnityEngine.Random.Range(0, colors.Length)];
+
             while (monsterMap.ContainsKey(randomColor))
             {
-                randomColor = (OrbColor)Random.Range(0, System.Enum.GetValues(typeof(OrbColor)).Length);
+                randomColor = colors[UnityEngine.Random.Range(0, colors.Length)];
             }
 
             monsterMap.Add(randomColor, monsterObject);
@@ -66,7 +71,7 @@ public class Summonager : MonoBehaviour
             Debug.LogError("No deposit point available");
             return false;
         }
-        
+
         // Grab the monsterObject that corresponds to the color of the deposited ingredient
         if (monsterMap.ContainsKey(depositedIngredient.color))
         {
