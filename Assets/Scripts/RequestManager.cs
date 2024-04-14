@@ -43,10 +43,10 @@ public class RequestManager : MonoBehaviour
     {
         CreateSingleton();
     }
-    
+
     private void Start()
     {
-        foreach(GameObject spawnPoint in spawnPointPrefabs)
+        foreach (GameObject spawnPoint in spawnPointPrefabs)
         {
             spawnPoints.Add(spawnPoint, null);
         }
@@ -125,8 +125,7 @@ public class RequestManager : MonoBehaviour
     private void RemoveRequest(RequestedMonster request)
     {
         activeRequests.Remove(request);
-        GameObject keyToRemove = spawnPoints.FirstOrDefault(kv => kv.Value == request).Key;
-        spawnPoints.Remove(keyToRemove);
+        spawnPoints.Remove(spawnPoints.FirstOrDefault(kv => kv.Value == request).Key);
         Destroy(request.gameObject);
     }
 
