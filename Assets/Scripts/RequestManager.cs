@@ -91,6 +91,7 @@ public class RequestManager : MonoBehaviour
     // So we can handle adding or removing from a score
     public void CompleteRequest(RequestedMonster request)
     {
+        GameManager.instance.IncrementScore(request.durationInSeconds);
         RemoveRequest(request);
     }
 

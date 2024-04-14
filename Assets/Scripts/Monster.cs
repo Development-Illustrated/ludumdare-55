@@ -25,6 +25,12 @@ public class Monster : BaseMonster
         {
             this.GetComponent<NavMeshAgent>().enabled = true;
             BoxCollider[] colliders = this.GetComponents<BoxCollider>();
+            Animator[] animators = this.GetComponents<Animator>();
+            foreach(Animator animator in animators)
+            {
+                animator.enabled = true;
+            }
+
             foreach(BoxCollider collider in colliders) 
             {
                 collider.enabled = false;
