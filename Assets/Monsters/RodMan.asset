@@ -10,11 +10,8 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: db2931514c0d34b98a36418e2e0ee671, type: 3}
-  m_Name: Demon
+  m_Name: RodMan
   m_EditorClassIdentifier: 
-  headPrefab: {fileID: 3662989175935741934, guid: 446293a3a90b42b4790936197bd46af9,
-    type: 3}
-  torsoPrefab: {fileID: 1636951130979393442, guid: 8854c9fe65b174346aa13f7727c5b473,
-    type: 3}
-  legsPrefab: {fileID: 788933003786267163, guid: d57a1acad4137204997504b12c0dd164,
-    type: 3}
+  headPrefab: {fileID: 0}
+  torsoPrefab: {fileID: 0}
+  legsPrefab: {fileID: 0}
