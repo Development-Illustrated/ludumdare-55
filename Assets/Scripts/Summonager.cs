@@ -5,7 +5,6 @@ using UnityEngine;
 
 public class Summonager : MonoBehaviour
 {
-    public static Summonager instance;
 
     [SerializeField]
     protected MonsterSO[] monsterObjects;
@@ -32,24 +31,8 @@ public class Summonager : MonoBehaviour
 
     protected Monster currentMonster;
 
-    private void CreateSingleton()
-    {
-        if (instance == null)
-        {
-            instance = this;
-        }
-        else
-        {
-            Destroy(gameObject);
-        }
-
-        DontDestroyOnLoad(gameObject);
-    }
-
     private void Awake()
     {
-        CreateSingleton();
-
         // Fill the dictionary with the monsters and their respective colors
         foreach (MonsterSO monsterObject in monsterObjects)
         {

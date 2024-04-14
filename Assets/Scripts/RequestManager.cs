@@ -25,7 +25,7 @@ public class RequestManager : MonoBehaviour
     [SerializeField]
     protected int requestDurationInSeconds = 25;
 
-    protected List<Request> activeRequests = new List<Request>();
+    protected List<RequestedMonster> activeRequests = new List<RequestedMonster>();
 
     protected enum State
     {
@@ -75,28 +75,28 @@ public class RequestManager : MonoBehaviour
 
     private void DispatchRequest()
     {
-        Request request = GenerateRequest();
+        RequestedMonster request = GenerateRequest();
         activeRequests.Add(request);
         currentState = State.Paused;
     }
 
     // Separate the timeout and complete request methods
     // So we can handle adding or removing from a score
-    public void TimeoutRequest(Request request)
+    public void TimeoutRequest(RequestedMonster request)
     {
         RemoveRequest(request);
     }
 
     // Separate the timeout and complete request methods
     // So we can handle adding or removing from a score
-    public void CompleteRequest(Request request)
+    public void CompleteRequest(RequestedMonster request)
     {
         RemoveRequest(request);
     }
 
     public bool CheckRequest(Monster monster)
     {
-        foreach (Request request in activeRequests)
+        foreach (RequestedMonster request in activeRequests)
         {
             if (request.head == monster.head && request.torso == monster.torso && request.legs == monster.legs)
             {
@@ -109,20 +109,20 @@ public class RequestManager : MonoBehaviour
         return false;
     }
 
-    private void RemoveRequest(Request request)
+    private void RemoveRequest(RequestedMonster request)
     {
         activeRequests.Remove(request);
         Destroy(request);
     }
 
-    private Request GenerateRequest()
+    private RequestedMonster GenerateRequest()
     {
         GameObject randomHead = monsterScriptableObjects[UnityEngine.Random.Range(0, monsterScriptableObjects.Length)].headPrefab;
         GameObject randomTorso = monsterScriptableObjects[UnityEngine.Random.Range(0, monsterScriptableObjects.Length)].torsoPrefab;
         GameObject randomLegs = monsterScriptableObjects[UnityEngine.Random.Range(0, monsterScriptableObjects.Length)].legsPrefab;
 
         GameObject newRequest = Instantiate(requestMonsterPrefab, spawnPoint.transform.position, Quaternion.identity);
-        Request requestScript = newRequest.GetComponent<Request>();
+        RequestedMonster requestScript = newRequest.GetComponent<RequestedMonster>();
 
         requestScript.AddHead(randomHead);
         requestScript.AddTorso(randomTorso);

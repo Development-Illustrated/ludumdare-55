@@ -27,7 +27,7 @@ public class Monster : MonoBehaviour
     {
         if (!head)
         {
-            head = Instantiate(headPrefab, transform.position, transform.rotation);
+            head = Instantiate(headPrefab, transform.position, transform.rotation, gameObject.transform);
         }
         else
         {
@@ -39,7 +39,7 @@ public class Monster : MonoBehaviour
     {
         if (head && !torso)
         {
-            torso = Instantiate(torsoPrefab, transform.position, transform.rotation);
+            torso = Instantiate(torsoPrefab, transform.position, transform.rotation, gameObject.transform);
 
             Transform torsoAnchor = head.transform.Find("TorsoAnchor");
             Transform headAnchor = torso.transform.Find("HeadAnchor");
@@ -58,7 +58,7 @@ public class Monster : MonoBehaviour
     {
         if (head && torso && !legs)
         {
-            legs = Instantiate(legsPrefab, transform.position, transform.rotation);
+            legs = Instantiate(legsPrefab, transform.position, transform.rotation, gameObject.transform);
 
             Transform legsAnchor = torso.transform.Find("LegsAnchor");
             Transform torsoAnchor = legs.transform.Find("TorsoAnchor");

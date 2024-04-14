@@ -123,6 +123,12 @@ NavMeshSettings:
     debug:
       m_Flags: 0
   m_NavMeshData: {fileID: 0}
+--- !u!1 &51278197 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 5148087079682040044, guid: 642e13247b9e34f4fb7fbb97bbc67888,
+    type: 3}
+  m_PrefabInstance: {fileID: 1576001014}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &116288389
 GameObject:
   m_ObjectHideFlags: 0
@@ -1247,8 +1253,24 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5932486837258097316, guid: 642e13247b9e34f4fb7fbb97bbc67888,
         type: 3}
+      propertyPath: spawnPoint
+      value: 
+      objectReference: {fileID: 51278197}
+    - target: {fileID: 5932486837258097316, guid: 642e13247b9e34f4fb7fbb97bbc67888,
+        type: 3}
+      propertyPath: monsterPrefab
+      value: 
+      objectReference: {fileID: 2796255949123626417, guid: 847d5ac92f5a64c0283da2b6ec592a0e,
+        type: 3}
+    - target: {fileID: 5932486837258097316, guid: 642e13247b9e34f4fb7fbb97bbc67888,
+        type: 3}
       propertyPath: depositPoints.Array.size
       value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 5932486837258097316, guid: 642e13247b9e34f4fb7fbb97bbc67888,
+        type: 3}
+      propertyPath: monsterObjects.Array.size
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 5932486837258097316, guid: 642e13247b9e34f4fb7fbb97bbc67888,
         type: 3}
@@ -1265,6 +1287,12 @@ PrefabInstance:
       propertyPath: depositPoints.Array.data[2]
       value: 
       objectReference: {fileID: 366643013}
+    - target: {fileID: 5932486837258097316, guid: 642e13247b9e34f4fb7fbb97bbc67888,
+        type: 3}
+      propertyPath: monsterObjects.Array.data[0]
+      value: 
+      objectReference: {fileID: 11400000, guid: 99a018fd8a549459bb3cd25fffc29246,
+        type: 2}
     - target: {fileID: 6011287062159585857, guid: 642e13247b9e34f4fb7fbb97bbc67888,
         type: 3}
       propertyPath: m_Name

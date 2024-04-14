@@ -5,11 +5,6 @@ using UnityEngine;
 public enum OrbColor
 {
     Orange,
-    Blue,
-    Red,
-    Yellow,
-    Purple,
-    Green,
 }
 
 
