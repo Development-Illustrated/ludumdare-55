@@ -23,7 +23,7 @@ public class MonsterController : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        Monster monster = gameObject.GetComponent<Monster>()
+        Monster monster = gameObject.GetComponent<Monster>();
         currentState = monster.currentState;
         if (waitTime >= 0)
         {
