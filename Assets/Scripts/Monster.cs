@@ -5,6 +5,7 @@ using UnityEngine.Rendering;
 
 public enum MonsterState
 {
+    Building,
     Passive,
     Loving,
     Angry
@@ -14,8 +15,8 @@ public class Monster : BaseMonster
 {
     public override void Activate()
     {
-        bool result = RequestManager.instance.CheckRequest(this);
-        if (result)
+        bool doesMonsterMatchRequest = RequestManager.instance.CheckRequest(this);
+        if (doesMonsterMatchRequest)
         {
             Destroy(gameObject);
         }
