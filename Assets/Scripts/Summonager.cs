@@ -4,6 +4,8 @@ using UnityEngine;
 
 public class Summonager : MonoBehaviour
 {
+    public static Summonager instance;
+
     [SerializeField]
     protected MonsterSO[] monsterObjects;
 
@@ -13,7 +15,7 @@ public class Summonager : MonoBehaviour
     [SerializeField]
     protected GameObject spawnPoint;
 
-    Dictionary<OrbColor, MonsterSO> summonagerMap = new Dictionary<OrbColor, MonsterSO>();
+    Dictionary<OrbColor, MonsterSO> monsterMap = new Dictionary<OrbColor, MonsterSO>();
 
     protected enum State
     {
@@ -25,16 +27,31 @@ public class Summonager : MonoBehaviour
 
     protected State currentState = State.Empty;
 
-    // protected GameObject currentMonster;
     protected Monster currentMonster;
+
+    private void CreateSingleton()
+    {
+        if (instance == null)
+        {
+            instance = this;
+        }
+        else
+        {
+            Destroy(gameObject);
+        }
+
+        DontDestroyOnLoad(gameObject);
+    }
 
     private void Awake()
     {
-        // Fill the dictionary with the summonagers and their respective colors
+        CreateSingleton();
+
+        // Fill the dictionary with the monsters and their respective colors
         foreach (MonsterSO monsterObject in monsterObjects)
         {
             OrbColor randomColor = (OrbColor)Random.Range(0, System.Enum.GetValues(typeof(OrbColor)).Length);
-            while (summonagerMap.ContainsKey(randomColor))
+            while (monsterMap.ContainsKey(randomColor))
             {
                 randomColor = (OrbColor)Random.Range(0, System.Enum.GetValues(typeof(OrbColor)).Length);
             }
@@ -45,10 +62,10 @@ public class Summonager : MonoBehaviour
 
     public void Deposit(Ingredient depositedIngredient)
     {
-        // Grab the summonagerObject that corresponds to the color of the deposited ingredient
-        if (summonagerMap.ContainsKey(depositedIngredient.color))
+        // Grab the monsterObject that corresponds to the color of the deposited ingredient
+        if (monsterMap.ContainsKey(depositedIngredient.color))
         {
-            MonsterSO monsterObject = summonagerMap[depositedIngredient.color];
+            MonsterSO monsterObject = monsterMap[depositedIngredient.color];
 
             switch (currentState)
             {
@@ -72,7 +89,7 @@ public class Summonager : MonoBehaviour
         }
         else
         {
-            Debug.LogError("No summonager found for color " + depositedIngredient.color);
+            Debug.LogError("No monster found for color " + depositedIngredient.color);
         }
     }
 
