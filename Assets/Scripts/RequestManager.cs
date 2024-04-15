@@ -64,8 +64,6 @@ public class RequestManager : MonoBehaviour
         {
             Destroy(gameObject);
         }
-
-        DontDestroyOnLoad(gameObject);
     }
 
     private void Update()

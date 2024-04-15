@@ -85,7 +85,7 @@ public class PlayerController : MonoBehaviour
 
     public void RequestInteract()
     {
-        if(occupiedPedistal && !currentIngredient)
+        if(occupiedPedistal && !currentIngredient && GameManager.instance.currentState != GameState.Ended)
         {
             if (occupiedPedistal.PickUpOrb())
             {

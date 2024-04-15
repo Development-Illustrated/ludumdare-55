@@ -6,9 +6,17 @@ using UnityEngine.UI;
 using TMPro;
 using UnityEngine.SceneManagement;
 
+public enum GameState
+{
+    Playing,
+    Ended
+}
+
 public class GameManager : MonoBehaviour
 {
     public static GameManager instance;
+
+    public GameState currentState = GameState.Playing;
 
     protected int score = 0;
     [SerializeField] protected TMP_Text scoreText;
@@ -19,6 +27,7 @@ public class GameManager : MonoBehaviour
     [SerializeField] protected TMP_Text failedText;
     [SerializeField] protected GameObject endGameUI;
     [SerializeField] protected GameObject inGameUI;
+    [SerializeField] protected PlayerController playerController;
 
     [HideInInspector]
     private List<Color> OrbColors = new List<Color>();
@@ -27,11 +36,6 @@ public class GameManager : MonoBehaviour
     {
         score = 0;
         failedRequests = 0;
-        scoreText.text = "Score: 0";
-        finalScoreText.text = "0";
-        failedText.text = "Missed orders: 0/" + maxFailableRequests;
-        inGameUI.SetActive(true);
-        endGameUI.SetActive(false);
     }
 
     public void RestartGame()
@@ -62,6 +66,8 @@ public class GameManager : MonoBehaviour
 
         if(failedRequests == maxFailableRequests)
         {
+            playerController.enabled = false;
+            currentState = GameState.Ended;
             endGameUI.SetActive(true);
             inGameUI.SetActive(false);
         }
@@ -77,20 +83,23 @@ public class GameManager : MonoBehaviour
         {
             Destroy(gameObject);
         }
+    }
 
-        DontDestroyOnLoad(gameObject);
+    private void Start()
+    {
+        playerController = FindObjectOfType<PlayerController>();
     }
 
     private void Awake()
     {
+        CreateSingleton();
+
         OrbColors.Add(Color.red);
         OrbColors.Add(Color.blue);
         OrbColors.Add(Color.green);
         OrbColors.Add(Color.yellow);
         OrbColors.Add(Color.black);
         OrbColors.Add(Color.magenta);
-
-        CreateSingleton();
 
         failedText.text = "Missed orders: 0/" + maxFailableRequests;
         endGameUI.SetActive(false);
