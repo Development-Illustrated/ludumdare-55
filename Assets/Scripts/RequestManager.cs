@@ -99,6 +99,7 @@ public class RequestManager : MonoBehaviour
     public void TimeoutRequest(RequestedMonster request)
     {
         RemoveRequest(request);
+        GameManager.instance.IncrementFailure();
     }
 
     // Separate the timeout and complete request methods
