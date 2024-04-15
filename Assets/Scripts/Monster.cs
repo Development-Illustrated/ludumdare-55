@@ -14,12 +14,13 @@ public enum MonsterState
 
 public class Monster : BaseMonster
 {
-    public override void Activate()
+    public override bool Activate()
     {
         bool doesMonsterMatchRequest = RequestManager.instance.CheckRequest(this);
         if (doesMonsterMatchRequest)
         {
             Destroy(gameObject);
+            return true;
         }
         else
         {
@@ -36,6 +37,7 @@ public class Monster : BaseMonster
                 collider.enabled = false;
             }
             SetState(MonsterState.Passive);
+            return false;
         }
     }
 }

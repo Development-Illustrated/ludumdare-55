@@ -6,10 +6,14 @@ using UnityEngine.InputSystem;
 public class DaveInput : MonoBehaviour
 {
     [SerializeField] bool debugMode;
+    [SerializeField] protected AudioClip throwSound;
+
+    AudioSource audioSource;
 
     PlayerController playerController;
     
     private void Awake() {
+        audioSource = GetComponent<AudioSource>();
         playerController = GetComponent<PlayerController>();
     }
 
@@ -27,6 +31,7 @@ public class DaveInput : MonoBehaviour
 
     public void OnYeet(InputValue value)
     {
+        audioSource.PlayOneShot(throwSound);
         if(debugMode){Debug.Log("OnYeet called");}
         this.gameObject.SendMessage("RequestYeet");
     }

@@ -72,5 +72,5 @@ public abstract class BaseMonster : MonoBehaviour
         }
     }
 
-    public abstract void Activate();
+    public abstract bool Activate();
 }

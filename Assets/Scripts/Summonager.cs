@@ -7,6 +7,9 @@ using UnityEngine;
 public class Summonager : MonoBehaviour
 {
 
+    [SerializeField] protected AudioClip successSound;
+    [SerializeField] protected AudioClip failureSound;
+
     [SerializeField]
     protected MonsterSO[] monsterObjects;
 
@@ -19,6 +22,8 @@ public class Summonager : MonoBehaviour
     [SerializeField] protected DepositPoint[] depositPoints;
 
     Dictionary<Color, MonsterSO> monsterMap = new Dictionary<Color, MonsterSO>();
+
+    AudioSource audioSource;
 
     protected enum State
     {
@@ -33,6 +38,8 @@ public class Summonager : MonoBehaviour
 
     private void Start()
     {
+        audioSource = GetComponent<AudioSource>();
+
         Ingredient[] ingredients = FindObjectsOfType<Ingredient>();
 
         Color[] colors = ingredients.Select(ingredient => ingredient.color).ToArray();
@@ -103,7 +110,11 @@ public class Summonager : MonoBehaviour
                         currentMonster.transform.position.z
                     );
                   
-                    currentMonster.Activate();
+                    if (currentMonster.Activate()){
+                        audioSource.PlayOneShot(successSound);
+                    } else {
+                        audioSource.PlayOneShot(failureSound);
+                    }
                     foreach (DepositPoint point in depositPoints)
                     {
                         point.RemoveIngredient();

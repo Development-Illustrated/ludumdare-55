@@ -24,10 +24,12 @@ public class RequestedMonster : BaseMonster
     }
 
     // Override the Activate methdod from the Monster class
-    public override void Activate()
+    public override bool Activate()
     {
         countdownText.text = durationInSeconds.ToString();
        
         StartCoroutine(TimeoutRequest());
+
+        return true;
     }
 }
