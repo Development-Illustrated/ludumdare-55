@@ -1,0 +1,20 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: db2931514c0d34b98a36418e2e0ee671, type: 3}
+  m_Name: SuitMan
+  m_EditorClassIdentifier: 
+  headPrefab: {fileID: 1002859600450196038, guid: 6f23b935370ee435590ff9681ad109e3,
+    type: 3}
+  torsoPrefab: {fileID: 915870978251709585, guid: 3e413666c96ec4eb3a0ed00080cf54fa,
+    type: 3}
+  legsPrefab: {fileID: 5676121822415444439, guid: 49bc885faca2f43d785213139611977d,
+    type: 3}
