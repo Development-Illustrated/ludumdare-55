@@ -50,6 +50,8 @@ public class RequestManager : MonoBehaviour
         {
             spawnPoints.Add(spawnPoint, null);
         }
+
+        DispatchRequest();
     }
 
     private void CreateSingleton()
