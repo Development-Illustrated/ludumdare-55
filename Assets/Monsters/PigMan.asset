@@ -12,6 +12,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: db2931514c0d34b98a36418e2e0ee671, type: 3}
   m_Name: PigMan
   m_EditorClassIdentifier: 
-  headPrefab: {fileID: 0}
-  torsoPrefab: {fileID: 0}
-  legsPrefab: {fileID: 0}
+  headPrefab: {fileID: 2023289546482778842, guid: c55d6addcff8448e1a4ead3f88b38726,
+    type: 3}
+  torsoPrefab: {fileID: 6031688381389994351, guid: 9618ca9fcfa3c46bd89ac8f21f0ccbef,
+    type: 3}
+  legsPrefab: {fileID: 2019114687476389785, guid: 95fcced8d312647ada1ccaa936e89ec7,
+    type: 3}

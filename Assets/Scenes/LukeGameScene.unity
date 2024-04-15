@@ -4699,7 +4699,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 564970484}
   serializedVersion: 2
-  m_LocalRotation: {x: 0.21930832, y: 0.1682169, z: -0.038417432, w: 0.96027654}
+  m_LocalRotation: {x: 0.21930833, y: 0.16821696, z: -0.03841745, w: 0.96027654}
   m_LocalPosition: {x: 0, y: 22.14, z: -30.437}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
@@ -5249,19 +5249,19 @@ PrefabInstance:
     - target: {fileID: 2600462431710961281, guid: 853cd9bbd5616424c986f73e729c9bc5,
         type: 3}
       propertyPath: monsterScriptableObjects.Array.size
-      value: 3
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 2600462431710961281, guid: 853cd9bbd5616424c986f73e729c9bc5,
         type: 3}
       propertyPath: monsterScriptableObjects.Array.data[0]
       value: 
-      objectReference: {fileID: 11400000, guid: 20c186e53bd514d04bccf2554415e98e,
+      objectReference: {fileID: 11400000, guid: 464190c1540fb4ad4ad54f5b5c6dfafd,
         type: 2}
     - target: {fileID: 2600462431710961281, guid: 853cd9bbd5616424c986f73e729c9bc5,
         type: 3}
       propertyPath: monsterScriptableObjects.Array.data[1]
       value: 
-      objectReference: {fileID: 11400000, guid: 816f917526683674c948db04d16d4ff7,
+      objectReference: {fileID: 11400000, guid: 6ac947cd31fb9834d8a551d8901be9f5,
         type: 2}
     - target: {fileID: 2600462431710961281, guid: 853cd9bbd5616424c986f73e729c9bc5,
         type: 3}
@@ -15476,7 +15476,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2037891446}
   serializedVersion: 2
-  m_LocalRotation: {x: 0.21930829, y: 0.1682169, z: -0.038417432, w: 0.96027654}
+  m_LocalRotation: {x: 0.2193083, y: 0.16821693, z: -0.03841744, w: 0.96027654}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
@@ -16502,6 +16502,210 @@ Transform:
     type: 3}
   m_PrefabInstance: {fileID: 2145909256}
   m_PrefabAsset: {fileID: 0}
+--- !u!1001 &3529159644350189411
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    serializedVersion: 3
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 539205111075240874, guid: c55d6addcff8448e1a4ead3f88b38726,
+        type: 3}
+      propertyPath: m_LocalPosition.x
+      value: -23.38427
+      objectReference: {fileID: 0}
+    - target: {fileID: 539205111075240874, guid: c55d6addcff8448e1a4ead3f88b38726,
+        type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 20.473595
+      objectReference: {fileID: 0}
+    - target: {fileID: 539205111075240874, guid: c55d6addcff8448e1a4ead3f88b38726,
+        type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 79.99307
+      objectReference: {fileID: 0}
+    - target: {fileID: 539205111075240874, guid: c55d6addcff8448e1a4ead3f88b38726,
+        type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 539205111075240874, guid: c55d6addcff8448e1a4ead3f88b38726,
+        type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 539205111075240874, guid: c55d6addcff8448e1a4ead3f88b38726,
+        type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 539205111075240874, guid: c55d6addcff8448e1a4ead3f88b38726,
+        type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 539205111075240874, guid: c55d6addcff8448e1a4ead3f88b38726,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 539205111075240874, guid: c55d6addcff8448e1a4ead3f88b38726,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 539205111075240874, guid: c55d6addcff8448e1a4ead3f88b38726,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2023289546482778842, guid: c55d6addcff8448e1a4ead3f88b38726,
+        type: 3}
+      propertyPath: m_Name
+      value: PigManHead
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+    m_RemovedGameObjects: []
+    m_AddedGameObjects: []
+    m_AddedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: c55d6addcff8448e1a4ead3f88b38726, type: 3}
+--- !u!1001 &5611601641030586905
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    serializedVersion: 3
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 408887275403530809, guid: 95fcced8d312647ada1ccaa936e89ec7,
+        type: 3}
+      propertyPath: m_LocalPosition.x
+      value: -23.38427
+      objectReference: {fileID: 0}
+    - target: {fileID: 408887275403530809, guid: 95fcced8d312647ada1ccaa936e89ec7,
+        type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 20.473595
+      objectReference: {fileID: 0}
+    - target: {fileID: 408887275403530809, guid: 95fcced8d312647ada1ccaa936e89ec7,
+        type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 79.99307
+      objectReference: {fileID: 0}
+    - target: {fileID: 408887275403530809, guid: 95fcced8d312647ada1ccaa936e89ec7,
+        type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 408887275403530809, guid: 95fcced8d312647ada1ccaa936e89ec7,
+        type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 408887275403530809, guid: 95fcced8d312647ada1ccaa936e89ec7,
+        type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 408887275403530809, guid: 95fcced8d312647ada1ccaa936e89ec7,
+        type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 408887275403530809, guid: 95fcced8d312647ada1ccaa936e89ec7,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 408887275403530809, guid: 95fcced8d312647ada1ccaa936e89ec7,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 408887275403530809, guid: 95fcced8d312647ada1ccaa936e89ec7,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2019114687476389785, guid: 95fcced8d312647ada1ccaa936e89ec7,
+        type: 3}
+      propertyPath: m_Name
+      value: PigManLegs
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+    m_RemovedGameObjects: []
+    m_AddedGameObjects: []
+    m_AddedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 95fcced8d312647ada1ccaa936e89ec7, type: 3}
+--- !u!1001 &7104455686416155804
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    serializedVersion: 3
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 785256751915507006, guid: 9618ca9fcfa3c46bd89ac8f21f0ccbef,
+        type: 3}
+      propertyPath: m_LocalPosition.x
+      value: -23.38427
+      objectReference: {fileID: 0}
+    - target: {fileID: 785256751915507006, guid: 9618ca9fcfa3c46bd89ac8f21f0ccbef,
+        type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 20.473595
+      objectReference: {fileID: 0}
+    - target: {fileID: 785256751915507006, guid: 9618ca9fcfa3c46bd89ac8f21f0ccbef,
+        type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 79.99307
+      objectReference: {fileID: 0}
+    - target: {fileID: 785256751915507006, guid: 9618ca9fcfa3c46bd89ac8f21f0ccbef,
+        type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 785256751915507006, guid: 9618ca9fcfa3c46bd89ac8f21f0ccbef,
+        type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 785256751915507006, guid: 9618ca9fcfa3c46bd89ac8f21f0ccbef,
+        type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 785256751915507006, guid: 9618ca9fcfa3c46bd89ac8f21f0ccbef,
+        type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 785256751915507006, guid: 9618ca9fcfa3c46bd89ac8f21f0ccbef,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 785256751915507006, guid: 9618ca9fcfa3c46bd89ac8f21f0ccbef,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 785256751915507006, guid: 9618ca9fcfa3c46bd89ac8f21f0ccbef,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6031688381389994351, guid: 9618ca9fcfa3c46bd89ac8f21f0ccbef,
+        type: 3}
+      propertyPath: m_Name
+      value: PigManTorso
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+    m_RemovedGameObjects: []
+    m_AddedGameObjects: []
+    m_AddedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 9618ca9fcfa3c46bd89ac8f21f0ccbef, type: 3}
 --- !u!1660057539 &9223372036854775807
 SceneRoots:
   m_ObjectHideFlags: 0
@@ -16526,3 +16730,6 @@ SceneRoots:
   - {fileID: 1845388891}
   - {fileID: 721735181}
   - {fileID: 886703746}
+  - {fileID: 3529159644350189411}
+  - {fileID: 7104455686416155804}
+  - {fileID: 5611601641030586905}
