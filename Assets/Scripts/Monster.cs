@@ -8,8 +8,8 @@ public enum MonsterState
 {
     Building,
     Passive,
-    Loving,
-    Angry
+    Angry,
+    Loving
 }
 
 public class Monster : BaseMonster
@@ -24,6 +24,8 @@ public class Monster : BaseMonster
         }
         else
         {
+            RequestManager.instance.DecreaseDuration(10);
+            RequestManager.instance.DecreaseDelay(10);
             this.GetComponent<NavMeshAgent>().enabled = true;
             BoxCollider[] colliders = this.GetComponents<BoxCollider>();
             Animator[] animators = this.GetComponents<Animator>();

@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using Unity.VisualScripting;
@@ -36,9 +37,10 @@ public class MonsterController : MonoBehaviour
             if (changeBehaviourCount <= 0)
             {
                 RandomiseBehaviour();
-            } else {
+            }
+            else
+            {
                 changeBehaviourCount -= Time.deltaTime;
-
             }
 
             if (!isMoving)
@@ -62,11 +64,15 @@ public class MonsterController : MonoBehaviour
     private void RandomiseBehaviour()
     {
         isMoving = false;
-        changeBehaviourCount = Random.Range(minChangeBehaviourCount, maxChangeBehaviourCount);
+        changeBehaviourCount = UnityEngine.Random.Range(minChangeBehaviourCount, maxChangeBehaviourCount);
 
-        int randomState = (int)Mathf.Round(Random.Range(1f, 3f));
+        int randomState;
+        do
+        {
+            randomState = (int)Mathf.Round(UnityEngine.Random.Range(1f, 3f));
+        } while (currentState == (MonsterState)randomState && currentState != MonsterState.Angry);
 
-        Debug.Log(randomState);
+        Debug.Log("Changing state from " + currentState.ToString() + " to " + ((MonsterState)randomState).ToString());
 
         monster.SetState((MonsterState)randomState);
     }
@@ -93,7 +99,8 @@ public class MonsterController : MonoBehaviour
     {
         isMoving = true;
 
-        Vector3 randomDirection = Random.insideUnitSphere * walkRadius;
+        Vector3 randomDirection = UnityEngine.Random.insideUnitSphere * walkRadius;
+
         randomDirection += transform.position;
         NavMeshHit hit;
         Vector3 finalPosition = Vector3.zero;

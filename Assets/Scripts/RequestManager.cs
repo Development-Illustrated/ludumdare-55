@@ -10,6 +10,12 @@ public class RequestManager : MonoBehaviour
     public static RequestManager instance;
 
     [SerializeField]
+    protected int minimumTimeout = 15;
+
+    [SerializeField]
+    protected int minimumDelay = 1;
+
+    [SerializeField]
     protected GameObject[] spawnPointPrefabs;
 
     [SerializeField]
@@ -98,6 +104,15 @@ public class RequestManager : MonoBehaviour
     {
         RemoveRequest(request);
         GameManager.instance.IncrementFailure();
+
+        DecreaseDuration(15);
+    }
+
+    public void DecreaseDuration(int amountToDecrease)
+    {
+        if(requestDurationInSeconds > minimumTimeout) {
+            requestDurationInSeconds = Math.Max(minimumTimeout, requestDurationInSeconds - amountToDecrease);
+        }
     }
 
     // Separate the timeout and complete request methods
@@ -106,6 +121,8 @@ public class RequestManager : MonoBehaviour
     {
         GameManager.instance.IncrementScore(request.durationInSeconds);
         RemoveRequest(request);
+
+        DecreaseDuration(5);
     }
 
     public bool CheckRequest(Monster monster)
@@ -129,6 +146,15 @@ public class RequestManager : MonoBehaviour
         GameObject keyToRemove = spawnPoints.FirstOrDefault(kv => kv.Value == request).Key;
         spawnPoints[keyToRemove] = null;
         Destroy(request.gameObject);
+
+        DecreaseDelay(5);
+    }
+
+    public void DecreaseDelay(int amount)
+    {
+        if(requestDelayInSeconds > minimumDelay) {
+            requestDelayInSeconds = Math.Max(minimumDelay, requestDelayInSeconds - amount);
+        }
     }
 
     private RequestedMonster GenerateRequest()

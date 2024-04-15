@@ -63,8 +63,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   agent: {fileID: -5547232736782530452}
-  minChangeBehaviourCount: 10
-  maxChangeBehaviourCount: 30
+  minChangeBehaviourCount: 5
+  maxChangeBehaviourCount: 15
   walkRadius: 25
   playerProximity: 0.2
 --- !u!195 &-5547232736782530452

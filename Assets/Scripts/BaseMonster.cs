@@ -11,11 +11,6 @@ public abstract class BaseMonster : MonoBehaviour
 
     public MonsterState currentState = MonsterState.Building;
 
-    private void Start()
-    {
-       
-    }
-
     public void SetState(MonsterState state)
     {
         currentState = state;
