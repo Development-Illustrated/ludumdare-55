@@ -11,6 +11,7 @@ public class GameManager : MonoBehaviour
     protected int score = 0;
     [SerializeField] protected TMP_Text scoreText;
     
+    [SerializeField] protected int maxFailableRequests = 10;
     protected int failedRequests = 0;
     [SerializeField] protected TMP_Text failedText;
 
@@ -27,6 +28,11 @@ public class GameManager : MonoBehaviour
     {
         failedRequests += 1;
         failedText.text = "Missed orders: " + failedRequests;
+
+        if(failedRequests == maxFailableRequests)
+        {
+            // KILL THE GAME
+        }
     }
 
     private void CreateSingleton()
