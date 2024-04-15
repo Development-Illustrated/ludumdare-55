@@ -44,7 +44,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0db15518fa659445cbaa828e5c00aa93, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  spawnPoint: {fileID: 0}
+  spawnPointPrefabs: []
   requestMonsterPrefab: {fileID: 8758333927234638739, guid: 8f604285d886a49768207b6de42f23df,
     type: 3}
   monsterScriptableObjects:
