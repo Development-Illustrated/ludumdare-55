@@ -8,9 +8,15 @@ public class PedistalOrb : MonoBehaviour
     [SerializeField] protected float minRespawnTime;
     [SerializeField] protected float maxRespawnTime;
     [SerializeField] public Ingredient ingredient;
+    [SerializeField] protected AudioClip pickupSound;
 
     public bool isRespawning;
     private float respawnCounter;
+    AudioSource audioSource;
+
+    void Start(){
+        audioSource = GetComponent<AudioSource>();
+    }
 
     void Update()
     {
@@ -35,6 +41,7 @@ public class PedistalOrb : MonoBehaviour
             return false;
         }
 
+        audioSource.PlayOneShot(pickupSound);
         Debug.Log("Picked up ingredient: " + ingredient);
         ingredient.gameObject.SetActive(false);
         respawnCounter = Random.Range(minRespawnTime, maxRespawnTime);

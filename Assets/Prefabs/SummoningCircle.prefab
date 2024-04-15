@@ -637,6 +637,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   successSound: {fileID: 8300000, guid: 4c655635f7a62804c83d579b18c6f8ce, type: 3}
   failureSound: {fileID: 8300000, guid: e3f67ee3b50163a46a61c9a2054ad30e, type: 3}
+  putdownSound: {fileID: 8300000, guid: dcaa5bb072098834ab67899ac2a390f4, type: 3}
   monsterObjects:
   - {fileID: 11400000, guid: 6ac947cd31fb9834d8a551d8901be9f5, type: 2}
   - {fileID: 11400000, guid: 6ac947cd31fb9834d8a551d8901be9f5, type: 2}
@@ -663,7 +664,7 @@ AudioSource:
   OutputAudioMixerGroup: {fileID: 0}
   m_audioClip: {fileID: 0}
   m_PlayOnAwake: 0
-  m_Volume: 0.22
+  m_Volume: 0.266
   m_Pitch: 1
   Loop: 0
   Mute: 0

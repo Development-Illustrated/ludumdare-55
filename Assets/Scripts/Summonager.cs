@@ -9,6 +9,7 @@ public class Summonager : MonoBehaviour
 
     [SerializeField] protected AudioClip successSound;
     [SerializeField] protected AudioClip failureSound;
+    [SerializeField] protected AudioClip putdownSound;
 
     [SerializeField]
     protected MonsterSO[] monsterObjects;
@@ -74,6 +75,7 @@ public class Summonager : MonoBehaviour
                 break;
             }
         }
+        audioSource.PlayOneShot(putdownSound);
 
         if (!deposited)
         {

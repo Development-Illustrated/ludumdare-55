@@ -33,6 +33,7 @@ public class Ingredient : MonoBehaviour
 
     public void LetsGetPhysical()
     {
+
         if(debugMode){Debug.Log("Ingredient: LetsGetPhysical called");}
         this.GetComponent<Animator>().enabled = false;
         this.GetComponent<Collider>().enabled = true;
