@@ -27,6 +27,7 @@ public class RequestedMonster : BaseMonster
     public override void Activate()
     {
         countdownText.text = durationInSeconds.ToString();
+       
         StartCoroutine(TimeoutRequest());
     }
 }

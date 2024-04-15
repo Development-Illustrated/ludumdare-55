@@ -140,8 +140,7 @@ public class RequestManager : MonoBehaviour
 
 
         KeyValuePair<GameObject, RequestedMonster> spawnPoint = spawnPoints.FirstOrDefault(kv => kv.Value == null);
-        Debug.Log(spawnPoint.Key);
-        Debug.Log(spawnPoint.Value);
+
         GameObject newRequest = Instantiate(requestMonsterPrefab, spawnPoint.Key.transform.position, Quaternion.identity);
         RequestedMonster requestScript = newRequest.GetComponent<RequestedMonster>();
         spawnPoints[spawnPoint.Key] = requestScript;
@@ -149,6 +148,13 @@ public class RequestManager : MonoBehaviour
         requestScript.AddHead(randomHead);
         requestScript.AddTorso(randomTorso);
         requestScript.AddLegs(randomLegs);
+
+        Camera camera = FindObjectOfType<Camera>();
+        Vector3 direction = camera.transform.position - requestScript.head.transform.position;
+
+        requestScript.head.transform.rotation = Quaternion.LookRotation(direction);
+        requestScript.torso.transform.rotation = Quaternion.LookRotation(direction);
+        requestScript.legs.transform.rotation = Quaternion.LookRotation(direction);
 
         requestScript.durationInSeconds = requestDurationInSeconds;
 

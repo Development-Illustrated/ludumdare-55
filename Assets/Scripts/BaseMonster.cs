@@ -7,9 +7,14 @@ public abstract class BaseMonster : MonoBehaviour
     [HideInInspector] public GameObject head;
     [HideInInspector] public GameObject torso;
     [HideInInspector] public GameObject legs;
-
+ 
 
     public MonsterState currentState = MonsterState.Building;
+
+    private void Start()
+    {
+       
+    }
 
     public void SetState(MonsterState state)
     {
@@ -33,6 +38,7 @@ public abstract class BaseMonster : MonoBehaviour
         if (head && !torso)
         {
             torso = Instantiate(torsoPrefab, transform.position, transform.rotation, gameObject.transform);
+
 
             Transform torsoAnchor = head.transform.Find("TorsoAnchor");
             Transform headAnchor = torso.transform.Find("HeadAnchor");
