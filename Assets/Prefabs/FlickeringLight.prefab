@@ -12,6 +12,7 @@ GameObject:
   - component: {fileID: 9097351835818863344}
   - component: {fileID: 7511645675436879180}
   - component: {fileID: 2094068946089074697}
+  - component: {fileID: 4474976272158187321}
   m_Layer: 0
   m_Name: FlickeringLight
   m_TagString: Untagged
@@ -126,12 +127,28 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 3120697178842275820}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: fbc20084ec4c34db4b4f766dc0441d71, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  minIntensity: 5
+  minIntensity: 7
   maxIntensity: 10
   minFlickerTime: 0.05
-  maxFlickerTime: 0.1
+  maxFlickerTime: 1
+--- !u!114 &4474976272158187321
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3120697178842275820}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1e551c31a9b8e734c9a030777ef6472a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  light: {fileID: 0}
+  minIntensity: 4
+  maxIntensity: 10
+  smoothing: 29
