@@ -35,7 +35,7 @@ public class Monster : BaseMonster
             {
                 collider.enabled = false;
             }
-            SetState(MonsterState.Angry);
+            SetState(MonsterState.Passive);
         }
     }
 }

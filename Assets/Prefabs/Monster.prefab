@@ -63,8 +63,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   agent: {fileID: -5547232736782530452}
-  minWaitTime: 1
-  maxWaitTime: 10
+  minChangeBehaviourCount: 10
+  maxChangeBehaviourCount: 30
   walkRadius: 25
   playerProximity: 0.2
 --- !u!195 &-5547232736782530452

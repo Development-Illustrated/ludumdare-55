@@ -7,12 +7,12 @@ using UnityEngine.AI;
 public class MonsterController : MonoBehaviour
 {
     [SerializeField] protected NavMeshAgent agent;
-    [SerializeField] protected float minWaitTime;
-    [SerializeField] protected float maxWaitTime;
+    [SerializeField] protected float minChangeBehaviourCount;
+    [SerializeField] protected float maxChangeBehaviourCount;
     [SerializeField] protected float walkRadius;
     [SerializeField] protected float playerProximity;
 
-    private float waitTime = 0;
+    private float changeBehaviourCount = 0;
     private bool isMoving = false;
     private MonsterState currentState;
     private Monster monster;
@@ -33,13 +33,12 @@ public class MonsterController : MonoBehaviour
         currentState = monster.currentState;
         if (currentState != MonsterState.Building)
         {
-            if (waitTime >= 0)
+            if (changeBehaviourCount <= 0)
             {
-                waitTime -= Time.deltaTime;
-            }
-            else
-            {
-                isMoving = false;
+                RandomiseBehaviour();
+            } else {
+                changeBehaviourCount -= Time.deltaTime;
+
             }
 
             if (!isMoving)
@@ -58,7 +57,18 @@ public class MonsterController : MonoBehaviour
             }
 
         }
+    }
 
+    private void RandomiseBehaviour()
+    {
+        isMoving = false;
+        changeBehaviourCount = Random.Range(minChangeBehaviourCount, maxChangeBehaviourCount);
+
+        int randomState = (int)Mathf.Round(Random.Range(1f, 3f));
+
+        Debug.Log(randomState);
+
+        monster.SetState((MonsterState)randomState);
     }
 
     private void MakePlayerYeet()
@@ -71,7 +81,7 @@ public class MonsterController : MonoBehaviour
     {
         Vector3 proximityToPlayer = player.transform.position.normalized - transform.position.normalized;
 
-        if ((Mathf.Abs(proximityToPlayer.x) + Mathf.Abs(proximityToPlayer.z)) <= playerProximity && currentState == MonsterState.Angry)
+        if (Mathf.Abs(proximityToPlayer.x) <= playerProximity && Mathf.Abs(proximityToPlayer.z) <= playerProximity && currentState == MonsterState.Angry)
         {
             MakePlayerYeet();
         }
@@ -82,7 +92,6 @@ public class MonsterController : MonoBehaviour
     private Vector3 RandomNavmeshLocation()
     {
         isMoving = true;
-        waitTime = Random.Range(minWaitTime, maxWaitTime);
 
         Vector3 randomDirection = Random.insideUnitSphere * walkRadius;
         randomDirection += transform.position;
