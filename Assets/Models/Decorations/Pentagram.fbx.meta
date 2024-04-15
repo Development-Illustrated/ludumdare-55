@@ -3,7 +3,18 @@ guid: 28c95c56ee08afa4d96299c9f4d5198b
 ModelImporter:
   serializedVersion: 22200
   internalIDToNameTable: []
-  externalObjects: {}
+  externalObjects:
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Black Stone
+    second: {fileID: -868883895949394131, guid: b20bac5d919f0a745920dec89ba6ee13,
+      type: 3}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Red
+    second: {fileID: 2100000, guid: f8153a236e8b1a64c9557f9db766d53d, type: 2}
   materials:
     materialImportMode: 2
     materialName: 0
