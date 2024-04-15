@@ -4699,7 +4699,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 564970484}
   serializedVersion: 2
-  m_LocalRotation: {x: 0.21930833, y: 0.16821696, z: -0.03841745, w: 0.96027654}
+  m_LocalRotation: {x: 0.21930832, y: 0.1682169, z: -0.038417432, w: 0.96027654}
   m_LocalPosition: {x: 0, y: 22.14, z: -30.437}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
@@ -5214,12 +5214,12 @@ PrefabInstance:
     - target: {fileID: 2600462431710961281, guid: 853cd9bbd5616424c986f73e729c9bc5,
         type: 3}
       propertyPath: maxRequests
-      value: 1
+      value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 2600462431710961281, guid: 853cd9bbd5616424c986f73e729c9bc5,
         type: 3}
       propertyPath: requestDelayInSeconds
-      value: 15
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 2600462431710961281, guid: 853cd9bbd5616424c986f73e729c9bc5,
         type: 3}
@@ -5249,13 +5249,13 @@ PrefabInstance:
     - target: {fileID: 2600462431710961281, guid: 853cd9bbd5616424c986f73e729c9bc5,
         type: 3}
       propertyPath: monsterScriptableObjects.Array.size
-      value: 1
+      value: 6
       objectReference: {fileID: 0}
     - target: {fileID: 2600462431710961281, guid: 853cd9bbd5616424c986f73e729c9bc5,
         type: 3}
       propertyPath: monsterScriptableObjects.Array.data[0]
       value: 
-      objectReference: {fileID: 11400000, guid: 464190c1540fb4ad4ad54f5b5c6dfafd,
+      objectReference: {fileID: 11400000, guid: 5bf291f69fe814712800fd7ec2c5ab4e,
         type: 2}
     - target: {fileID: 2600462431710961281, guid: 853cd9bbd5616424c986f73e729c9bc5,
         type: 3}
@@ -5267,7 +5267,25 @@ PrefabInstance:
         type: 3}
       propertyPath: monsterScriptableObjects.Array.data[2]
       value: 
-      objectReference: {fileID: 11400000, guid: 6ac947cd31fb9834d8a551d8901be9f5,
+      objectReference: {fileID: 11400000, guid: 464190c1540fb4ad4ad54f5b5c6dfafd,
+        type: 2}
+    - target: {fileID: 2600462431710961281, guid: 853cd9bbd5616424c986f73e729c9bc5,
+        type: 3}
+      propertyPath: monsterScriptableObjects.Array.data[3]
+      value: 
+      objectReference: {fileID: 11400000, guid: 816f917526683674c948db04d16d4ff7,
+        type: 2}
+    - target: {fileID: 2600462431710961281, guid: 853cd9bbd5616424c986f73e729c9bc5,
+        type: 3}
+      propertyPath: monsterScriptableObjects.Array.data[4]
+      value: 
+      objectReference: {fileID: 11400000, guid: 20c186e53bd514d04bccf2554415e98e,
+        type: 2}
+    - target: {fileID: 2600462431710961281, guid: 853cd9bbd5616424c986f73e729c9bc5,
+        type: 3}
+      propertyPath: monsterScriptableObjects.Array.data[5]
+      value: 
+      objectReference: {fileID: 11400000, guid: 5f90f4a0e076d9941ab8362b410421a0,
         type: 2}
     - target: {fileID: 6505494362129765665, guid: 853cd9bbd5616424c986f73e729c9bc5,
         type: 3}
@@ -15476,7 +15494,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2037891446}
   serializedVersion: 2
-  m_LocalRotation: {x: 0.2193083, y: 0.16821693, z: -0.03841744, w: 0.96027654}
+  m_LocalRotation: {x: 0.21930829, y: 0.1682169, z: -0.038417432, w: 0.96027654}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
@@ -15734,31 +15752,31 @@ PrefabInstance:
         type: 3}
       propertyPath: monsterObjects.Array.data[1]
       value: 
-      objectReference: {fileID: 11400000, guid: 20c186e53bd514d04bccf2554415e98e,
+      objectReference: {fileID: 11400000, guid: 6ac947cd31fb9834d8a551d8901be9f5,
         type: 2}
     - target: {fileID: 5932486837258097316, guid: 642e13247b9e34f4fb7fbb97bbc67888,
         type: 3}
       propertyPath: monsterObjects.Array.data[2]
       value: 
-      objectReference: {fileID: 11400000, guid: 20c186e53bd514d04bccf2554415e98e,
+      objectReference: {fileID: 11400000, guid: 464190c1540fb4ad4ad54f5b5c6dfafd,
         type: 2}
     - target: {fileID: 5932486837258097316, guid: 642e13247b9e34f4fb7fbb97bbc67888,
         type: 3}
       propertyPath: monsterObjects.Array.data[3]
       value: 
-      objectReference: {fileID: 11400000, guid: 20c186e53bd514d04bccf2554415e98e,
+      objectReference: {fileID: 11400000, guid: 816f917526683674c948db04d16d4ff7,
         type: 2}
     - target: {fileID: 5932486837258097316, guid: 642e13247b9e34f4fb7fbb97bbc67888,
         type: 3}
       propertyPath: monsterObjects.Array.data[4]
       value: 
-      objectReference: {fileID: 11400000, guid: 20c186e53bd514d04bccf2554415e98e,
+      objectReference: {fileID: 11400000, guid: 5bf291f69fe814712800fd7ec2c5ab4e,
         type: 2}
     - target: {fileID: 5932486837258097316, guid: 642e13247b9e34f4fb7fbb97bbc67888,
         type: 3}
       propertyPath: monsterObjects.Array.data[5]
       value: 
-      objectReference: {fileID: 11400000, guid: 20c186e53bd514d04bccf2554415e98e,
+      objectReference: {fileID: 11400000, guid: 5f90f4a0e076d9941ab8362b410421a0,
         type: 2}
     - target: {fileID: 6595286408397196158, guid: 642e13247b9e34f4fb7fbb97bbc67888,
         type: 3}

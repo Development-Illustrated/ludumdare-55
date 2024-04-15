@@ -12,6 +12,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: db2931514c0d34b98a36418e2e0ee671, type: 3}
   m_Name: Spider
   m_EditorClassIdentifier: 
-  headPrefab: {fileID: 0}
-  torsoPrefab: {fileID: 0}
-  legsPrefab: {fileID: 0}
+  headPrefab: {fileID: 8264619492927194136, guid: 77298026e6def454e80f7ef5f4aaa86b,
+    type: 3}
+  torsoPrefab: {fileID: 3989683461690700815, guid: 17870592c3111b5438e956e75c9eed4e,
+    type: 3}
+  legsPrefab: {fileID: 7786025831774729757, guid: bb1498902d062434a87689f120b2a862,
+    type: 3}
