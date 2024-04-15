@@ -1,0 +1,20 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: db2931514c0d34b98a36418e2e0ee671, type: 3}
+  m_Name: SlugMan
+  m_EditorClassIdentifier: 
+  headPrefab: {fileID: 7826813530385515410, guid: e4a59e031b0d74fa8b4532dc5e077153,
+    type: 3}
+  torsoPrefab: {fileID: 7826813530385515410, guid: b18079cfc46644be8b5dd44c097d0890,
+    type: 3}
+  legsPrefab: {fileID: 7826813530385515410, guid: daf35b9422cf14e299349f15f3fc7a55,
+    type: 3}
