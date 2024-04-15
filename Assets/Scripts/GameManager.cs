@@ -42,7 +42,7 @@ public class GameManager : MonoBehaviour
     {
         ResetGameData();
 
-        SceneManager.LoadScene("FinalGameSceneV1");
+        SceneManager.LoadScene("GameScene");
     }
 
     public void QuitToMain()
