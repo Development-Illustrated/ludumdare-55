@@ -640,11 +640,11 @@ MonoBehaviour:
   putdownSound: {fileID: 8300000, guid: dcaa5bb072098834ab67899ac2a390f4, type: 3}
   monsterObjects:
   - {fileID: 11400000, guid: 6ac947cd31fb9834d8a551d8901be9f5, type: 2}
-  - {fileID: 11400000, guid: 6ac947cd31fb9834d8a551d8901be9f5, type: 2}
-  - {fileID: 11400000, guid: 6ac947cd31fb9834d8a551d8901be9f5, type: 2}
-  - {fileID: 11400000, guid: 6ac947cd31fb9834d8a551d8901be9f5, type: 2}
-  - {fileID: 11400000, guid: 6ac947cd31fb9834d8a551d8901be9f5, type: 2}
-  - {fileID: 11400000, guid: 6ac947cd31fb9834d8a551d8901be9f5, type: 2}
+  - {fileID: 11400000, guid: 464190c1540fb4ad4ad54f5b5c6dfafd, type: 2}
+  - {fileID: 11400000, guid: 816f917526683674c948db04d16d4ff7, type: 2}
+  - {fileID: 11400000, guid: 5bf291f69fe814712800fd7ec2c5ab4e, type: 2}
+  - {fileID: 11400000, guid: 5f90f4a0e076d9941ab8362b410421a0, type: 2}
+  - {fileID: 11400000, guid: 20c186e53bd514d04bccf2554415e98e, type: 2}
   monsterPrefab: {fileID: 2796255949123626417, guid: 847d5ac92f5a64c0283da2b6ec592a0e,
     type: 3}
   spawnPoint: {fileID: 6014783833766250427}

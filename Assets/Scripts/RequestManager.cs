@@ -10,7 +10,7 @@ public class RequestManager : MonoBehaviour
     public static RequestManager instance;
 
     [SerializeField]
-    protected int minimumTimeout = 15;
+    protected int minimumTimeout = 30;
 
     [SerializeField]
     protected int minimumDelay = 1;
@@ -110,7 +110,7 @@ public class RequestManager : MonoBehaviour
 
     public void DecreaseDuration(int amountToDecrease)
     {
-        if(requestDurationInSeconds > minimumTimeout) {
+        if(requestDurationInSeconds >= minimumTimeout) {
             requestDurationInSeconds = Math.Max(minimumTimeout, requestDurationInSeconds - amountToDecrease);
         }
     }

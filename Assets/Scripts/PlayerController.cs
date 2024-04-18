@@ -130,7 +130,7 @@ public class PlayerController : MonoBehaviour
 
         for(int i = 0; i < hitColliders.Length; i++)
         {
-            if(hitColliders[i].tag == "Ingredient")
+            if(hitColliders[i].tag == "Ingredient" && hitColliders[i].transform.parent == null)
             {
                 ingredients.Add(hitColliders[i].GetComponent<Ingredient>());
             }

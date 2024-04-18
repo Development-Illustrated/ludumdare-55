@@ -95,11 +95,11 @@ public class GameManager : MonoBehaviour
         CreateSingleton();
 
         OrbColors.Add(Color.red);
+        OrbColors.Add(Color.magenta);
         OrbColors.Add(Color.blue);
-        OrbColors.Add(Color.green);
         OrbColors.Add(Color.yellow);
         OrbColors.Add(Color.black);
-        OrbColors.Add(Color.magenta);
+        OrbColors.Add(Color.white);
 
         failedText.text = "Missed orders: 0/" + maxFailableRequests;
         endGameUI.SetActive(false);
